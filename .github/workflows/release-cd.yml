@@ -110,7 +110,7 @@ jobs:
       - name: Notify Vercel
         uses: vercel/repository-dispatch/actions/status@v1
         with:
-          name: 'Vercel - dadei: deploy'
+          name: 'Vercel - chello: deploy'
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/checkout@v6
@@ -150,7 +150,7 @@ jobs:
         id: release
         with:
           tag: ${{ steps.pkg.outputs.tag }}
-          name: dadei App ${{ steps.pkg.outputs.tag }}
+          name: Chello App ${{ steps.pkg.outputs.tag }}
           commit: ${{ github.sha }}
           allowUpdates: true
           makeLatest: true

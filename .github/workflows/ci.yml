@@ -40,11 +40,11 @@ jobs:
 
       - name: Run UI tests
         if: matrix.task == 'test'
-        run: npm run test --workspace=@dadei/ui
+        run: npm run test --workspace=@chello/ui
 
       - name: Typecheck UI package
         if: matrix.task == 'typecheck'
-        run: npm run build --workspace=@dadei/ui
+        run: npm run build --workspace=@chello/ui
 
       - name: Verify version bump on code changes
         if: matrix.task == 'test' && github.event_name == 'pull_request'
