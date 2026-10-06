@@ -149,23 +149,11 @@ export default function LandingPage() {
             >
               <SectionHeading
                 eyebrow="why chello?"
-                title="named after my grandmother, dadi."
-                body="growing up, she made sure i was fed, happy, and on track. she focused on the things i did not have to think about, because she wanted me to have a better life."
+                title="quiet support, built to move with you."
+                body="chello carries that same spirit: quiet support, thoughtful reminders, and genuine care behind every nudge."
               />
 
             </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: 0.08 }}
-              className="relative z-10 mt-10 max-w-5xl text-2xl leading-snug text-zinc-100 font-secondary sm:text-3xl"
-            >
-              <span className="text-emerald-200/90">"</span>
-              <span> chello carries that same spirit: quiet support, thoughtful reminders, and genuine care behind every nudge. </span>
-              <span className="text-emerald-200/90">"</span>
-            </motion.p>
           </div>
         </section>
 
