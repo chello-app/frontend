@@ -3,11 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 import {
   getRealtimeClientId,
   subscribeRealtimeMessages,
-} from '@dadei/ui/lib/assistant/realtime/realtimeClient';
-import { isDeviceCapBlocked } from '@dadei/ui/lib/assistant/lifecycle/deviceCap';
-import { serviceApi } from '@dadei/ui/lib/workspace/api/service';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
-import { useSubscription } from '@dadei/ui/lib/platform/query/queryHooks';
+} from '@chello/ui/lib/assistant/realtime/realtimeClient';
+import { isDeviceCapBlocked } from '@chello/ui/lib/assistant/lifecycle/deviceCap';
+import { serviceApi } from '@chello/ui/lib/workspace/api/service';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
+import { useSubscription } from '@chello/ui/lib/platform/query/queryHooks';
 
 /** True when this device cannot use the mic affordance due to the free-tier device cap. */
 export function useDeviceCapBlocked(enabled = true): boolean {

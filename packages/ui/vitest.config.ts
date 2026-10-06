@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@dadei/ui': path.resolve(__dirname, './src'),
+      '@chello/ui': path.resolve(__dirname, './src'),
     },
   },
   test: {

@@ -1,4 +1,4 @@
-import type { BannerItem } from '@dadei/ui/contexts/NotificationContext';
+import type { BannerItem } from '@chello/ui/contexts/NotificationContext';
 
 /** Vertical offset between stacked layers (px). */
 export const BANNER_LAYER_STEP_PX = 14;

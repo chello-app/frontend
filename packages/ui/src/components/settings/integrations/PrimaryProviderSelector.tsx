@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 type Domain = 'mail' | 'calendar' | 'contacts';
 

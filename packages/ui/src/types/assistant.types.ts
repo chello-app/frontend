@@ -1,5 +1,5 @@
-import type { CommandMode, CommandState } from '@dadei/ui/types/command.types';
-import type { ServiceMode } from '@dadei/ui/types/service.types';
+import type { CommandMode, CommandState } from '@chello/ui/types/command.types';
+import type { ServiceMode } from '@chello/ui/types/service.types';
 
 /**
  * Composed assistant store — derived on the client from service webhooks,

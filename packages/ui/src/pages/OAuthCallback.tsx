@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Loading } from '@dadei/ui/components/Loading';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
-import { resolvePostOAuthPath, OAUTH_LINKED_QUERY } from '@dadei/ui/lib/platform/runtime/assistantPaths';
+import { Loading } from '@chello/ui/components/Loading';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
+import { resolvePostOAuthPath, OAUTH_LINKED_QUERY } from '@chello/ui/lib/platform/runtime/assistantPaths';
 
 /**
  * Web OAuth return handler — not a user-facing page.
  * The API redirects here with tokens (login) or `linked` (settings connect) in the query string.
- * Desktop Electron uses the `dadei://oauth/callback` custom protocol instead and does not mount this route.
+ * Desktop Electron uses the `chello://oauth/callback` custom protocol instead and does not mount this route.
  */
 export function OAuthCallback() {
   const [searchParams] = useSearchParams();

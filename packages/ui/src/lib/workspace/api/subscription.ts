@@ -1,6 +1,6 @@
-import { api } from '@dadei/ui/lib/workspace/api/http/client';
-import { ENDPOINTS } from '@dadei/ui/lib/workspace/api/http/constants';
-import type { BillingClient, SubscriptionView } from '@dadei/ui/types/subscription.types';
+import { api } from '@chello/ui/lib/workspace/api/http/client';
+import { ENDPOINTS } from '@chello/ui/lib/workspace/api/http/constants';
+import type { BillingClient, SubscriptionView } from '@chello/ui/types/subscription.types';
 
 function webSpaOrigin(): string | undefined {
   if (typeof window === 'undefined') return undefined;

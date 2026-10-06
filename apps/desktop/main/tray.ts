@@ -38,7 +38,7 @@ function attachTrayHandlers(icon: NonNullable<ReturnType<typeof resolveTrayIcon>
   }
 
   tray = new Tray(icon);
-  tray.setToolTip('dadei');
+  tray.setToolTip('chello');
   tray.on('click', () => showMainWindow());
   tray.setContextMenu(Menu.buildFromTemplate(buildTrayMenuTemplate(showMainWindow)));
 }

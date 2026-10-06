@@ -1,7 +1,7 @@
 import type { Dispatch } from 'react';
-import type { AssistantAction, AssistantState } from '@dadei/ui/types/assistant.types';
-import type { ServiceMode } from '@dadei/ui/types/service.types';
-import type { ServiceModeClaim } from '@dadei/ui/types/service.types';
+import type { AssistantAction, AssistantState } from '@chello/ui/types/assistant.types';
+import type { ServiceMode } from '@chello/ui/types/service.types';
+import type { ServiceModeClaim } from '@chello/ui/types/service.types';
 
 /** Authoritative service snapshot from backend (`assistant_state` websocket / claim HTTP). */
 export interface AssistantStateSnapshot {

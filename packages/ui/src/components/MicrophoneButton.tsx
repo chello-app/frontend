@@ -1,14 +1,14 @@
 import { useContext, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import { AudioContext } from '@dadei/ui/contexts/AudioContext';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
-import { useMicIntent } from '@dadei/ui/lib/assistant/lifecycle/useMicIntent';
-import { useDeviceCapBlocked } from '@dadei/ui/lib/assistant/lifecycle/useDeviceCapBlocked';
-import MicAmbientRipples from '@dadei/ui/components/command/mic/MicAmbientRipples';
-import MicGlassLayer from '@dadei/ui/components/command/mic/MicGlassLayer';
-import MicSpinner from '@dadei/ui/components/command/mic/MicSpinner';
-import { MIC_GRAY_LOADING, MIC_GRAY_LOCKED } from '@dadei/ui/components/command/mic/micChrome';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import { AudioContext } from '@chello/ui/contexts/AudioContext';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
+import { useMicIntent } from '@chello/ui/lib/assistant/lifecycle/useMicIntent';
+import { useDeviceCapBlocked } from '@chello/ui/lib/assistant/lifecycle/useDeviceCapBlocked';
+import MicAmbientRipples from '@chello/ui/components/command/mic/MicAmbientRipples';
+import MicGlassLayer from '@chello/ui/components/command/mic/MicGlassLayer';
+import MicSpinner from '@chello/ui/components/command/mic/MicSpinner';
+import { MIC_GRAY_LOADING, MIC_GRAY_LOCKED } from '@chello/ui/components/command/mic/micChrome';
 
 interface MicrophoneButtonProps {
   disableSpaceToggle?: boolean;

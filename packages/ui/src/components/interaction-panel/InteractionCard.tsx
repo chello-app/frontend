@@ -1,10 +1,10 @@
-import type { Interaction } from '@dadei/ui/types/models.types';
+import type { Interaction } from '@chello/ui/types/models.types';
 import { formatLocalTime } from './conversationUtils';
-import SplitDeleteToolbar from '@dadei/ui/components/ui/SplitDeleteToolbar';
-import { useTutorialTargetInteractive } from '@dadei/ui/contexts/TutorialContext';
-import { isTutorialTestId } from '@dadei/ui/lib/onboarding/tutorial/fixtures';
-import { useMobileAssistant } from '@dadei/ui/lib/platform/hooks/useMobileAssistant';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import SplitDeleteToolbar from '@chello/ui/components/ui/SplitDeleteToolbar';
+import { useTutorialTargetInteractive } from '@chello/ui/contexts/TutorialContext';
+import { isTutorialTestId } from '@chello/ui/lib/onboarding/tutorial/fixtures';
+import { useMobileAssistant } from '@chello/ui/lib/platform/hooks/useMobileAssistant';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 export default function InteractionCard({
   interaction,

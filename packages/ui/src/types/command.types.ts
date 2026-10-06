@@ -34,7 +34,7 @@ export const ENROLLMENT_MODES: ReadonlySet<EnrollmentMode> = new Set([
  * Sent as `text` with `mode=introduction|retraining` to start an enrollment session.
  * Backend: `ENROLLMENT_KICKOFF` in enrollment.py
  */
-export const ENROLLMENT_KICKOFF_TEXT = '__dadei_enrollment_kickoff__';
+export const ENROLLMENT_KICKOFF_TEXT = '__chello_enrollment_kickoff__';
 
 /**
  * Shown in the command transcript when introduction or retraining begins.

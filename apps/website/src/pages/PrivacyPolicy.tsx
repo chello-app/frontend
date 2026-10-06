@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TERMS_EFFECTIVE_DATE } from '@dadei/ui/lib/platform/legal/constants';
+import { TERMS_EFFECTIVE_DATE } from '@chello/ui/lib/platform/legal/constants';
 import { LegalPageShell } from '@/components/legal/LegalPageShell';
 
 export default function PrivacyPolicy() {
@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
       <section className="space-y-3">
         <h2 className="font-primary text-xl text-zinc-100">Overview</h2>
         <p>
-          dadei (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) provides a voice-first personal
+          chello (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) provides a voice-first personal
           assistant that organizes context across your devices and helps you recall information,
           draft follow-ups, and complete tasks. This Privacy Policy explains what we collect, how we
           use it, and the choices you have.
@@ -90,7 +90,7 @@ export default function PrivacyPolicy() {
         <h2 className="font-primary text-xl text-zinc-100">Sharing</h2>
         <p>
           We do not sell your personal information. We share data only with service providers that
-          help us operate dadei (for example cloud hosting, speech and language models, email and
+          help us operate chello (for example cloud hosting, speech and language models, email and
           calendar APIs, and payment processing), when required by law, or to protect rights and
           safety. Connected-provider data is accessed only according to the permissions you grant.
         </p>
@@ -118,7 +118,7 @@ export default function PrivacyPolicy() {
       <section className="space-y-3">
         <h2 className="font-primary text-xl text-zinc-100">Children</h2>
         <p>
-          dadei is not directed to children under 13 (or the minimum age in your jurisdiction). We
+          chello is not directed to children under 13 (or the minimum age in your jurisdiction). We
           do not knowingly collect personal information from children.
         </p>
       </section>

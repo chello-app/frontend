@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { normalizeNotificationActions } from '@dadei/ui/lib/assistant/notifications/actionBannerSync';
-import type { NetworkAction } from '@dadei/ui/types/models.types';
+import { normalizeNotificationActions } from '@chello/ui/lib/assistant/notifications/actionBannerSync';
+import type { NetworkAction } from '@chello/ui/types/models.types';
 
 function action(partial: Partial<NetworkAction> & { id: string }): NetworkAction {
   return {

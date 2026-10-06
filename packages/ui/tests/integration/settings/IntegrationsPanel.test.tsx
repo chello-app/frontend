@@ -1,9 +1,9 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { IntegrationsPanel } from '@dadei/ui/components/settings/integrations/IntegrationsPanel';
+import { IntegrationsPanel } from '@chello/ui/components/settings/integrations/IntegrationsPanel';
 
-vi.mock('@dadei/ui/contexts/AuthContext', () => ({
+vi.mock('@chello/ui/contexts/AuthContext', () => ({
   useAuth: () => ({
     user: {
       primary_mail_provider: null,
@@ -16,19 +16,19 @@ vi.mock('@dadei/ui/contexts/AuthContext', () => ({
   }),
 }));
 
-vi.mock('@dadei/ui/contexts/SystemContext', () => ({
+vi.mock('@chello/ui/contexts/SystemContext', () => ({
   useSystem: () => ({ isElectron: false }),
 }));
 
-vi.mock('@dadei/ui/contexts/TutorialContext', () => ({
+vi.mock('@chello/ui/contexts/TutorialContext', () => ({
   useTutorialSettingsTourActive: () => false,
 }));
 
-vi.mock('@dadei/ui/contexts/NotificationContext', () => ({
+vi.mock('@chello/ui/contexts/NotificationContext', () => ({
   useNotifications: () => ({ showToast: vi.fn() }),
 }));
 
-vi.mock('@dadei/ui/lib/platform/query/queryHooks', () => ({
+vi.mock('@chello/ui/lib/platform/query/queryHooks', () => ({
   useIntegrationsStatusQuery: () => ({
     isSuccess: true,
     isError: false,

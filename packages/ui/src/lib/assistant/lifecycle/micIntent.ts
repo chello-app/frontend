@@ -1,13 +1,13 @@
-import type { AssistantState } from '@dadei/ui/types/assistant.types';
-import type { AssistantBubbleStatus } from '@dadei/ui/types/command.types';
+import type { AssistantState } from '@chello/ui/types/assistant.types';
+import type { AssistantBubbleStatus } from '@chello/ui/types/command.types';
 import {
   COMMAND_CAPTURE_STATES,
   selectIsAmbientEnabled,
   selectIsCommandThinking,
   selectIsCommandService,
-} from '@dadei/ui/lib/assistant/assistantRuntime';
-import type { MicAppearance } from '@dadei/ui/lib/assistant/voice/micAppearance';
-import { deriveMicAppearanceFromRuntime } from '@dadei/ui/lib/assistant/voice/micAppearance';
+} from '@chello/ui/lib/assistant/assistantRuntime';
+import type { MicAppearance } from '@chello/ui/lib/assistant/voice/micAppearance';
+import { deriveMicAppearanceFromRuntime } from '@chello/ui/lib/assistant/voice/micAppearance';
 
 export type MicIntentAction = MicAppearance['action'];
 

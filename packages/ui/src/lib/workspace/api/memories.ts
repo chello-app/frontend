@@ -1,6 +1,6 @@
-import { api } from '@dadei/ui/lib/workspace/api/http/client';
-import { ENDPOINTS } from '@dadei/ui/lib/workspace/api/http/constants';
-import type { EpisodicMemory } from '@dadei/ui/types/models.types';
+import { api } from '@chello/ui/lib/workspace/api/http/client';
+import { ENDPOINTS } from '@chello/ui/lib/workspace/api/http/constants';
+import type { EpisodicMemory } from '@chello/ui/types/models.types';
 import { buildEndpoint } from './utils';
 
 export interface ListMemoriesParams {

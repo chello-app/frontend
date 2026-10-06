@@ -1,8 +1,8 @@
-import type { AssistantBubbleStatus, CommandState } from '@dadei/ui/types/command.types';
+import type { AssistantBubbleStatus, CommandState } from '@chello/ui/types/command.types';
 import {
   COMMAND_TURN_PAIR_LAYOUT_MS,
   VOICE_EASE,
-} from '@dadei/ui/lib/assistant/voice/constants';
+} from '@chello/ui/lib/assistant/voice/constants';
 
 /** Where the live user bubble sits for a given command phase. */
 export type UserBubblePlacement = 'dock' | 'stack';
@@ -110,7 +110,7 @@ export const COMMAND_BUBBLE_STACK_SPACING = {
 
 /** Empty dock placeholder copy. */
 export const COMMAND_DOCK_PLACEHOLDER = {
-  listening: 'Start speaking to dadei…',
+  listening: 'Start speaking to chello…',
   follow_up: 'Ask a follow-up…',
 } as const;
 
@@ -165,7 +165,7 @@ export function commandBubbleStackStyle(): { gap: number } {
   return { gap: COMMAND_BUBBLE_STACK_SPACING.stackGapPx };
 }
 
-/** User lands in the stack before dadei's thinking bubble fades in above. */
+/** User lands in the stack before chello's thinking bubble fades in above. */
 export const ASSISTANT_REVEAL_DELAY_MS = 340;
 
 /** Split motion only when response text is streaming — not on thinking entry. */

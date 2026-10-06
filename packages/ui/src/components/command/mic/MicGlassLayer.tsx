@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 import {
   MIC_GLASS,
   MIC_GLASS_CROSSFADE,
@@ -7,7 +7,7 @@ import {
   MIC_GLOW_HALO,
   MIC_SHELL,
   type MicGlassTone,
-} from '@dadei/ui/components/command/mic/micChrome';
+} from '@chello/ui/components/command/mic/micChrome';
 
 type CommandOrbLayers = {
   body: string;

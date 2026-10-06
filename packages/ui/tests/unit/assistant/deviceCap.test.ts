@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isDeviceCapBlocked } from '@dadei/ui/lib/assistant/lifecycle/deviceCap';
+import { isDeviceCapBlocked } from '@chello/ui/lib/assistant/lifecycle/deviceCap';
 
 describe('isDeviceCapBlocked', () => {
   it('does not block pro (unlimited devices)', () => {

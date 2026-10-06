@@ -1,7 +1,7 @@
-import { api } from '@dadei/ui/lib/workspace/api/http/client';
-import { ENDPOINTS } from '@dadei/ui/lib/workspace/api/http/constants';
+import { api } from '@chello/ui/lib/workspace/api/http/client';
+import { ENDPOINTS } from '@chello/ui/lib/workspace/api/http/constants';
 import { buildEndpoint } from './utils';
-import { Person } from '@dadei/ui/types/models.types';
+import { Person } from '@chello/ui/types/models.types';
 
 interface UpdatePersonData {
   name?: string;

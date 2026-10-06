@@ -67,7 +67,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     };
   },
 
-  // OAuth — unified web flow via dadei://oauth/callback
+  // OAuth — unified web flow via chello://oauth/callback
   startOAuthFlow: (loginUrl: string) =>
     ipcRenderer.invoke('auth:start-oauth-flow', loginUrl) as Promise<{
       access_token?: string;

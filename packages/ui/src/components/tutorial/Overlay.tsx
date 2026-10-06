@@ -1,25 +1,25 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
 import {
   TutorialProvider,
   useTutorial,
   useTutorialContext,
-} from '@dadei/ui/contexts/TutorialContext';
-import { useCommand } from '@dadei/ui/contexts/CommandContext';
+} from '@chello/ui/contexts/TutorialContext';
+import { useCommand } from '@chello/ui/contexts/CommandContext';
 import {
   backdropBlurForStep,
   isSettingsTutorialStep,
   TUTORIAL_TEST_BANNER_ID,
-} from '@dadei/ui/lib/onboarding/tutorial/constants';
+} from '@chello/ui/lib/onboarding/tutorial/constants';
 import {
   TUTORIAL_INTERACTION_COUNT,
   TUTORIAL_TEST_CONVERSATION_ID,
-} from '@dadei/ui/lib/onboarding/tutorial/fixtures';
-import { actionDomainLabel } from '@dadei/ui/lib/workspace/display/actionDisplay';
-import { isTutorialClickAllowed } from '@dadei/ui/lib/onboarding/tutorial/clickGuard';
-import { TUTORIAL_MORPH_TRANSITION } from '@dadei/ui/lib/onboarding/tutorial/motion';
-import type { TutorialStep } from '@dadei/ui/types/tutorial.types';
+} from '@chello/ui/lib/onboarding/tutorial/fixtures';
+import { actionDomainLabel } from '@chello/ui/lib/workspace/display/actionDisplay';
+import { isTutorialClickAllowed } from '@chello/ui/lib/onboarding/tutorial/clickGuard';
+import { TUTORIAL_MORPH_TRANSITION } from '@chello/ui/lib/onboarding/tutorial/motion';
+import type { TutorialStep } from '@chello/ui/types/tutorial.types';
 import Card from './Card';
 
 const BACKDROP_COLOR = 'rgba(0,0,0,0.12)';
@@ -182,10 +182,10 @@ function NotificationsBridge() {
       operation: 'delete',
       actionType: 'conversation',
       category: actionDomainLabel('conversation'),
-      title: 'Getting started with dadei',
+      title: 'Getting started with chello',
       toolArgs: {
         conversation_id: TUTORIAL_TEST_CONVERSATION_ID,
-        topic_summary: 'Getting started with dadei',
+        topic_summary: 'Getting started with chello',
         interaction_count: TUTORIAL_INTERACTION_COUNT,
       },
       showCountdown: true,

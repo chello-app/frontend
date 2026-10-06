@@ -1,5 +1,5 @@
-import { ENDPOINTS } from '@dadei/ui/lib/workspace/api/http/constants';
-import { ASSISTANT_PATH } from '@dadei/ui/lib/platform/runtime/assistantPaths';
+import { ENDPOINTS } from '@chello/ui/lib/workspace/api/http/constants';
+import { ASSISTANT_PATH } from '@chello/ui/lib/platform/runtime/assistantPaths';
 
 function apiOriginPrefix(): string {
   const apiUrl = process.env.API_URL || 'http://localhost:8000';
@@ -11,7 +11,7 @@ function apiOriginPrefix(): string {
 /**
  * Full URL to start OAuth in the browser (server redirect).
  * Web: API redirects to `{spaOrigin}/auth/callback` with tokens or `linked`.
- * Desktop Electron: pass `dadei://oauth` as spaOrigin; API redirects to `dadei://oauth/callback`.
+ * Desktop Electron: pass `chello://oauth` as spaOrigin; API redirects to `chello://oauth/callback`.
  */
 function buildWebOAuthLoginUrl(
   endpoint: string,

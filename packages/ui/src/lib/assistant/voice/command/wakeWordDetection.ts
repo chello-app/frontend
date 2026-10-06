@@ -22,7 +22,7 @@ export function isStandaloneGreeting(text: string): boolean {
 const MAX_DISFLUENCY_STRIPS = 4;
 
 /**
- * Strips a bounded chain of leading hesitation words (e.g. "Um, uh, Dadei").
+ * Strips a bounded chain of leading hesitation words (e.g. "Um, uh, Chello").
  */
 export function stripLeadingWakeDisfluencies(text: string): string {
   let s = text.trim();
@@ -39,7 +39,7 @@ export function normalizeTranscriptForWake(text: string): string {
 }
 
 /** Short bias only — long prompts bleed into transcripts and the command bubble. */
-export const WAKE_WORD_INITIAL_PROMPT = 'Dadei. Wake words: Dadei, Assistant, Jarvis.';
+export const WAKE_WORD_INITIAL_PROMPT = 'Chello. Wake words: Chello, Assistant, Jarvis.';
 
 const ASSISTANT_WAKE_BAD_FOLLOW = new Set([
   'means',
@@ -76,8 +76,8 @@ const ASSISTANT_WAKE_FIRST_WORDS = new Set([
   'jarvis',
 ]);
 
-const DADEI_WAKE_FIRST_WORDS = new Set([
-  'dadei',
+const CHELLO_WAKE_FIRST_WORDS = new Set([
+  'chello',
   'dadey',
   'dadee',
   'daday',
@@ -102,8 +102,8 @@ export function transcriptLikelyContainsWakeWord(text: string): boolean {
 
   if (/\bassistant\b/.test(lower)) return true;
 
-  const hasDadeiShape =
-    /\bdadei\b/.test(lower) ||
+  const hasChelloShape =
+    /\bchello\b/.test(lower) ||
     /\bdadey\b/.test(lower) ||
     /\bdadee\b/.test(lower) ||
     /\bdaday\b/.test(lower) ||
@@ -114,10 +114,10 @@ export function transcriptLikelyContainsWakeWord(text: string): boolean {
     /\bdade\s*[-]?\s*i\b/.test(lower) ||
     /\bjarvis\b/.test(lower);
 
-  if (hasDadeiShape) return true;
+  if (hasChelloShape) return true;
 
   const collapsed = lower.replace(/[^a-z]/g, '');
-  if (/dadei|dadey|dadee|daday|dahdee|dadai|dadeh|jarvis/.test(collapsed)) return true;
+  if (/chello|dadey|dadee|daday|dahdee|dadai|dadeh|jarvis/.test(collapsed)) return true;
   if (/assistant/.test(collapsed)) return true;
 
   return false;
@@ -148,11 +148,11 @@ function startsWithAssistantWake(lead: string, firstWord: string, collapsedLead:
   return /^assistant/.test(collapsedLead);
 }
 
-function startsWithDadeiWake(lead: string, collapsedLead: string, firstWord: string): boolean {
-  if (DADEI_WAKE_FIRST_WORDS.has(firstWord)) return true;
+function startsWithChelloWake(lead: string, collapsedLead: string, firstWord: string): boolean {
+  if (CHELLO_WAKE_FIRST_WORDS.has(firstWord)) return true;
 
   const startsShape =
-    /^dadei\b/i.test(lead) ||
+    /^chello\b/i.test(lead) ||
     /^dadey\b/i.test(lead) ||
     /^dadee\b/i.test(lead) ||
     /^daday\b/i.test(lead) ||
@@ -165,12 +165,12 @@ function startsWithDadeiWake(lead: string, collapsedLead: string, firstWord: str
 
   if (startsShape) return true;
 
-  return /^(dadei|dadey|dadee|daday|dahdee|dadai|dadeh|daddy|jarvis)/.test(collapsedLead);
+  return /^(chello|dadey|dadee|daday|dahdee|dadai|dadeh|daddy|jarvis)/.test(collapsedLead);
 }
 
 /**
  * True when the transcript begins with a wake token after optional leading fillers
- * (“Um, Dadei …”). Mid-sentence “… and Dadei …” is not treated as a command.
+ * (“Um, Chello …”). Mid-sentence “… and Chello …” is not treated as a command.
  */
 export function transcriptStartsWithWakeCommand(text: string): boolean {
   const normalized = normalizeTranscriptForWake(text);
@@ -186,7 +186,7 @@ export function transcriptStartsWithWakeCommand(text: string): boolean {
   const collapsedLead = lead.replace(/[^a-z]/g, '');
 
   if (startsWithAssistantWake(lead, firstWord, collapsedLead)) return true;
-  if (startsWithDadeiWake(lead, collapsedLead, firstWord)) return true;
+  if (startsWithChelloWake(lead, collapsedLead, firstWord)) return true;
 
   return false;
 }
@@ -206,7 +206,7 @@ export function normalizeVisibleCommandText(text: string): string {
 
   let out = normalized;
   out = out.replace(/^\s*da[- ]?dei\b[,.]?\s*/i, '');
-  out = out.replace(/^\s*dadei\b[,.]?\s*/i, '');
+  out = out.replace(/^\s*chello\b[,.]?\s*/i, '');
   out = out.replace(/^\s*daddy\b[,.]?\s*/i, '');
   out = out.replace(/^\s*jarvis\b[,.:]?\s*/i, '');
   out = out.replace(/^\s*assistant\b[,.:]?\s*/i, '');

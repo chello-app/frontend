@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url';
 
-export const WORDMARK = 'dadei';
+export const WORDMARK = 'chello';
 export const WORDMARK_FILL = '#f4f4f5';
 export const OG_BACKGROUND = { r: 9, g: 9, b: 11, alpha: 1 };
 export const TRANSPARENT = { r: 0, g: 0, b: 0, alpha: 0 };

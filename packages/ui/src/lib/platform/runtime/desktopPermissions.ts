@@ -1,7 +1,7 @@
 import type {
   DesktopPermissionKind,
   DesktopPermissionStatus,
-} from '@dadei/ui/types/electron';
+} from '@chello/ui/types/electron';
 
 function mergePermissionStatus(
   main: DesktopPermissionStatus,

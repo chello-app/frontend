@@ -4,8 +4,8 @@ import {
   selectCanClaimCommandService,
   selectIsAmbientEnabled,
   selectIsCommandService,
-} from '@dadei/ui/lib/assistant/assistantRuntime';
-import { INITIAL_ASSISTANT_STATE } from '@dadei/ui/types/assistant.types';
+} from '@chello/ui/lib/assistant/assistantRuntime';
+import { INITIAL_ASSISTANT_STATE } from '@chello/ui/types/assistant.types';
 
 describe('assistantRuntimeReducer', () => {
   it('enables ambient listening from authoritative snapshot', () => {

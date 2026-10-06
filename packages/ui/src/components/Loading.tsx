@@ -1,11 +1,11 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import type { BootstrapPhase } from '@dadei/ui/types/electron';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import type { BootstrapPhase } from '@chello/ui/types/electron';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 const PHASE_LABELS: Record<BootstrapPhase, string> = {
-  booting: 'Starting dadei…',
+  booting: 'Starting chello…',
   checking_server: 'Connecting to backend…',
   checking_updates: 'Checking for updates…',
   downloading: 'Downloading update…',
@@ -46,7 +46,7 @@ const BARS = [
   { height: 12, keyframes: [0.5, 0.85, 0.45, 1, 0.5], duration: 1.6 },
 ];
 
-const WORDMARK = 'dadei'.split('');
+const WORDMARK = 'chello'.split('');
 
 export type LoadingProps = {
   /** Shown below the wordmark instead of bootstrap phase text. */
@@ -186,11 +186,11 @@ export function Loading({ subtitleOverride, visible, onFullyHidden }: LoadingPro
       >
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="dadei-dot-matrix" width="24" height="24" patternUnits="userSpaceOnUse">
+            <pattern id="chello-dot-matrix" width="24" height="24" patternUnits="userSpaceOnUse">
               <circle cx="12" cy="12" r="1" fill="rgba(16,185,129,0.14)" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#dadei-dot-matrix)" />
+          <rect width="100%" height="100%" fill="url(#chello-dot-matrix)" />
         </svg>
       </div>
 

@@ -1,24 +1,24 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { isAxiosError } from 'axios';
-import { conversationsApi } from '@dadei/ui/lib/workspace/api/conversations';
-import { authApi } from '@dadei/ui/lib/workspace/api/auth';
-import { serviceApi } from '@dadei/ui/lib/workspace/api/service';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import type { Conversation } from '@dadei/ui/types/models.types';
-import type { UserMe } from '@dadei/ui/types/auth.types';
-import type { IntegrationsStatusResponse } from '@dadei/ui/types/integrations.types';
-import { subscriptionApi } from '@dadei/ui/lib/workspace/api/subscription';
-import type { SubscriptionView } from '@dadei/ui/types/subscription.types';
+import { conversationsApi } from '@chello/ui/lib/workspace/api/conversations';
+import { authApi } from '@chello/ui/lib/workspace/api/auth';
+import { serviceApi } from '@chello/ui/lib/workspace/api/service';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import type { Conversation } from '@chello/ui/types/models.types';
+import type { UserMe } from '@chello/ui/types/auth.types';
+import type { IntegrationsStatusResponse } from '@chello/ui/types/integrations.types';
+import { subscriptionApi } from '@chello/ui/lib/workspace/api/subscription';
+import type { SubscriptionView } from '@chello/ui/types/subscription.types';
 import {
   ASSISTANT_MEMORIES_LIST_LIMIT,
   AUTH_ME_STALE_MS,
   INTERACTION_PANEL_RECENT_LIMIT,
-} from '@dadei/ui/lib/platform/query/constants';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
+} from '@chello/ui/lib/platform/query/constants';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
 import { useQuery } from '@tanstack/react-query';
 
-export { INTERACTION_PANEL_RECENT_LIMIT } from '@dadei/ui/lib/platform/query/constants';
+export { INTERACTION_PANEL_RECENT_LIMIT } from '@chello/ui/lib/platform/query/constants';
 
 /** Shared options so every code path (useQueries, prefetch, realtime) hits the same cache shape. */
 export function conversationQueryOptions(conversationId: string) {
@@ -36,9 +36,9 @@ export function conversationQueryOptions(conversationId: string) {
 export {
   clearAssistantSessionCaches,
   removeAllConversationQueries,
-} from '@dadei/ui/lib/platform/query/cacheUtils';
+} from '@chello/ui/lib/platform/query/cacheUtils';
 
-export { ASSISTANT_MEMORIES_LIST_LIMIT } from '@dadei/ui/lib/platform/query/constants';
+export { ASSISTANT_MEMORIES_LIST_LIMIT } from '@chello/ui/lib/platform/query/constants';
 
 export function useAuthMeQuery(enabled = true) {
   return useQuery({

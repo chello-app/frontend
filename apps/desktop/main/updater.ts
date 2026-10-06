@@ -4,7 +4,7 @@ import { autoUpdater } from 'electron-updater';
 import type { BootstrapStatePayload } from './bootstrap-types';
 
 const ROOT_TIMEOUT_MS = 10_000;
-const GITHUB_RELEASES = 'https://github.com/dadei-app/frontend/releases';
+const GITHUB_RELEASES = 'https://github.com/chello-app/frontend/releases';
 
 interface RootHealthResponse {
   version: string;

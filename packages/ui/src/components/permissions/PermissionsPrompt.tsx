@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
 import {
   isRequiredPermission,
   permissionsForPlatform,
   toTutorialPlatform,
   type PermissionEntry,
-} from '@dadei/ui/lib/onboarding/tutorial/permissionsRegistry';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+} from '@chello/ui/lib/onboarding/tutorial/permissionsRegistry';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 type PermissionUiStatus = 'idle' | 'pending' | 'granted' | 'denied';
 

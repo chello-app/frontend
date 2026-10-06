@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 export default function MicSpinner({ className }: { className: string }) {
   return (

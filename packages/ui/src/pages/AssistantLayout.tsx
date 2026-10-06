@@ -1,37 +1,37 @@
 import { useLayoutEffect, useEffect, useState, type CSSProperties } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
-import { useAuthMeQuery, useNeedsTutorial } from '@dadei/ui/lib/platform/query/queryHooks';
-import { Loading } from '@dadei/ui/components/Loading';
-import ConsentGateScreen from '@dadei/ui/components/legal/ConsentGateScreen';
-import { TutorialOverlayContent } from '@dadei/ui/components/tutorial/Overlay';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
+import { useAuthMeQuery, useNeedsTutorial } from '@chello/ui/lib/platform/query/queryHooks';
+import { Loading } from '@chello/ui/components/Loading';
+import ConsentGateScreen from '@chello/ui/components/legal/ConsentGateScreen';
+import { TutorialOverlayContent } from '@chello/ui/components/tutorial/Overlay';
 import {
   TutorialProvider,
   useTutorialContext,
   useTutorialEngaged,
   useTutorialSettingsTourActive,
-} from '@dadei/ui/contexts/TutorialContext';
-import { isSettingsTutorialStep } from '@dadei/ui/lib/onboarding/tutorial/constants';
-import { CommandBubbleStackHost, useCommand } from '@dadei/ui/contexts/CommandContext';
-import { useService } from '@dadei/ui/contexts/ServiceContext';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import MicrophoneButton from '@dadei/ui/components/MicrophoneButton';
-import { ServicePermissionsGate } from '@dadei/ui/components/permissions/ServicePermissionsGate';
-import { BannerStackHost, ToastStackHost } from '@dadei/ui/contexts/NotificationContext';
-import Header from '@dadei/ui/components/Header';
-import InteractionPanel from '@dadei/ui/components/interaction-panel';
-import MobileInteractionsSheet from '@dadei/ui/components/MobileInteractionsSheet';
-import AssistantSettingsModal, { type SidebarView } from '@dadei/ui/components/settings';
+} from '@chello/ui/contexts/TutorialContext';
+import { isSettingsTutorialStep } from '@chello/ui/lib/onboarding/tutorial/constants';
+import { CommandBubbleStackHost, useCommand } from '@chello/ui/contexts/CommandContext';
+import { useService } from '@chello/ui/contexts/ServiceContext';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import MicrophoneButton from '@chello/ui/components/MicrophoneButton';
+import { ServicePermissionsGate } from '@chello/ui/components/permissions/ServicePermissionsGate';
+import { BannerStackHost, ToastStackHost } from '@chello/ui/contexts/NotificationContext';
+import Header from '@chello/ui/components/Header';
+import InteractionPanel from '@chello/ui/components/interaction-panel';
+import MobileInteractionsSheet from '@chello/ui/components/MobileInteractionsSheet';
+import AssistantSettingsModal, { type SidebarView } from '@chello/ui/components/settings';
 import {
   ASSISTANT_PATH,
   OAUTH_LINKED_QUERY,
   SETTINGS_RETURN_QUERY,
   isSettingsSidebarSection,
-} from '@dadei/ui/lib/platform/runtime/assistantPaths';
-import { useMobileAssistant } from '@dadei/ui/lib/platform/hooks/useMobileAssistant';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
-import { ENROLLMENT_TRANSCRIPT_OPENER } from '@dadei/ui/types/command.types';
+} from '@chello/ui/lib/platform/runtime/assistantPaths';
+import { useMobileAssistant } from '@chello/ui/lib/platform/hooks/useMobileAssistant';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
+import { ENROLLMENT_TRANSCRIPT_OPENER } from '@chello/ui/types/command.types';
 
 const ASSISTANT_HINT_ROW =
   'flex flex-wrap items-center justify-center gap-2 text-sm text-zinc-500 font-secondary';
@@ -42,7 +42,7 @@ function WakeWordHint() {
   return (
     <div className="text-center font-secondary">
       <p className="text-sm text-zinc-500">
-        Say <span className="text-emerald-400/90">hey dadei</span>
+        Say <span className="text-emerald-400/90">hey chello</span>
       </p>
       <p className="mt-1 text-[0.6875rem] tracking-wide text-zinc-600">{WAKE_PHONETIC}</p>
     </div>

@@ -8,12 +8,12 @@ import {
 } from 'react';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 import {
   TUTORIAL_MORPH_MS,
   TUTORIAL_MORPH_TRANSITION,
-} from '@dadei/ui/lib/onboarding/tutorial/motion';
-import type { TutorialStep } from '@dadei/ui/types/tutorial.types';
+} from '@chello/ui/lib/onboarding/tutorial/motion';
+import type { TutorialStep } from '@chello/ui/types/tutorial.types';
 
 const KNOB_CLASS =
   'flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-zinc-900/90 text-zinc-400 shadow-sm transition hover:border-emerald-500/25 hover:bg-zinc-800 hover:text-emerald-200 disabled:pointer-events-none disabled:opacity-30';

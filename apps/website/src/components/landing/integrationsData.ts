@@ -13,7 +13,7 @@ import {
   AppWindow,
   type LucideIcon,
 } from 'lucide-react';
-import { resolveWorkspaceToolLogo } from '@dadei/ui/components/settings/integrations/integrationIcons';
+import { resolveWorkspaceToolLogo } from '@chello/ui/components/settings/integrations/integrationIcons';
 
 export type ScopeItem = {
   label: string;

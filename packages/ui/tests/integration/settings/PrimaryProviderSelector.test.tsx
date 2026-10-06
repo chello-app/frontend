@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { PrimaryProviderSelector } from '@dadei/ui/components/settings/integrations/PrimaryProviderSelector';
+import { PrimaryProviderSelector } from '@chello/ui/components/settings/integrations/PrimaryProviderSelector';
 
 describe('PrimaryProviderSelector', () => {
   it('is hidden when fewer than two providers are connected', () => {

@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { ProviderColumn } from '@dadei/ui/components/settings/integrations/ProviderColumn';
-import type { ProviderHealth } from '@dadei/ui/types/integrations.types';
+import { ProviderColumn } from '@chello/ui/components/settings/integrations/ProviderColumn';
+import type { ProviderHealth } from '@chello/ui/types/integrations.types';
 
 const baseHealth: ProviderHealth = {
   provider: 'google',

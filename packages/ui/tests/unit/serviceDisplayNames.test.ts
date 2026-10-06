@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { workspaceServiceDisplayName } from '@dadei/ui/components/settings/integrations/serviceDisplayNames';
+import { workspaceServiceDisplayName } from '@chello/ui/components/settings/integrations/serviceDisplayNames';
 
 describe('workspaceServiceDisplayName', () => {
   it('uses Microsoft ecosystem product names', () => {

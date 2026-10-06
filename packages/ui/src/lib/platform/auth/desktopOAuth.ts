@@ -1,5 +1,5 @@
-/** Must match backend `DADEI_DESKTOP_OAUTH_ORIGIN` and Electron protocol handler. */
-export const DESKTOP_OAUTH_RETURN_ORIGIN = 'dadei://oauth';
+/** Must match backend `CHELLO_DESKTOP_OAUTH_ORIGIN` and Electron protocol handler. */
+export const DESKTOP_OAUTH_RETURN_ORIGIN = 'chello://oauth';
 
 export type DesktopOAuthCallbackParams = {
   access_token?: string;

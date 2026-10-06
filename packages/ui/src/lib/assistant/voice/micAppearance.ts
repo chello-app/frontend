@@ -4,9 +4,9 @@ import {
   selectIsCommandService,
   selectIsCommandThinking,
   selectIsMicSyncPending,
-} from '@dadei/ui/lib/assistant/assistantRuntime';
-import type { AssistantState } from '@dadei/ui/types/assistant.types';
-import type { AssistantBubbleStatus } from '@dadei/ui/types/command.types';
+} from '@chello/ui/lib/assistant/assistantRuntime';
+import type { AssistantState } from '@chello/ui/types/assistant.types';
+import type { AssistantBubbleStatus } from '@chello/ui/types/command.types';
 
 export type MicTone = 'blue' | 'red' | 'green' | 'none';
 

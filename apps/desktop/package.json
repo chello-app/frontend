@@ -1,5 +1,5 @@
 {
-  "name": "dadei-desktop",
+  "name": "chello-desktop",
   "version": "6.2.1",
   "author": {
     "name": "Ankur Desai",
@@ -15,7 +15,7 @@
     "clean": "rimraf dist renderer/dist release"
   },
   "dependencies": {
-    "@dadei/ui": "*",
+    "@chello/ui": "*",
     "axios": "^1.13.2",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",

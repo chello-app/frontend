@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { COMMAND_MODES, isEnrollmentMode } from '@dadei/ui/types/command.types';
+import { COMMAND_MODES, isEnrollmentMode } from '@chello/ui/types/command.types';
 
 describe('command.types', () => {
   it('lists all command modes accepted by POST /service/command/text', () => {

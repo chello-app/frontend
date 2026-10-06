@@ -1,14 +1,14 @@
 import { useRef, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Settings2, LogOut, Users } from 'lucide-react';
-import { logoUrl } from '@dadei/ui/assets/brand';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
-import PersonsPanel from '@dadei/ui/components/PersonsPanel';
-import ProBadge from '@dadei/ui/components/ProBadge';
-import Tooltip from '@dadei/ui/components/ui/Tooltip';
-import { ToolbarButton, ToolbarDivider, ToolbarShell } from '@dadei/ui/components/ui/Toolbar';
-import { useMobileAssistant } from '@dadei/ui/lib/platform/hooks/useMobileAssistant';
-import { useSubscription } from '@dadei/ui/lib/platform/query/queryHooks';
+import { logoUrl } from '@chello/ui/assets/brand';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
+import PersonsPanel from '@chello/ui/components/PersonsPanel';
+import ProBadge from '@chello/ui/components/ProBadge';
+import Tooltip from '@chello/ui/components/ui/Tooltip';
+import { ToolbarButton, ToolbarDivider, ToolbarShell } from '@chello/ui/components/ui/Toolbar';
+import { useMobileAssistant } from '@chello/ui/lib/platform/hooks/useMobileAssistant';
+import { useSubscription } from '@chello/ui/lib/platform/query/queryHooks';
 
 function HeaderTooltip({ label, children }: { label: string; children: ReactNode }) {
   const mobile = useMobileAssistant();
@@ -48,7 +48,7 @@ export default function Header({
           aria-hidden
         />
         <span className="assistant-brand-wordmark select-none font-brand text-2xl font-extrabold tracking-widest sm:text-3xl">
-          dadei
+          chello
         </span>
         {showProBadge ? <ProBadge /> : null}
       </div>

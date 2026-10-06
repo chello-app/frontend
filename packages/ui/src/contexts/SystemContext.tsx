@@ -17,28 +17,28 @@ import type {
   DesktopStartupSettings,
   Hotkey,
   Modifier,
-} from '@dadei/ui/types/electron';
+} from '@chello/ui/types/electron';
 import {
   AUDIO_SETTINGS_CHANGED,
   DEFAULT_AUDIO_SETTINGS,
   dispatchAudioSettingsChanged,
   loadAudioSettings,
   persistAudioSettings,
-} from '@dadei/ui/lib/assistant/audio/audioSettingsEvents';
+} from '@chello/ui/lib/assistant/audio/audioSettingsEvents';
 import {
   enumerateMicInputs,
   micDevicesHaveLabels,
-} from '@dadei/ui/lib/assistant/audio/micDevices';
+} from '@chello/ui/lib/assistant/audio/micDevices';
 import {
   checkElectronMicrophonePermission,
   checkRendererPermission,
   requestElectronMicrophonePermission,
   requestRendererPermission,
-} from '@dadei/ui/lib/platform/runtime/desktopPermissions';
+} from '@chello/ui/lib/platform/runtime/desktopPermissions';
 import {
   DESKTOP_TITLEBAR_STRIP_HEIGHT_CSS,
   isDesktopTitleBarTarget,
-} from '@dadei/ui/lib/platform/runtime/electronWindowChrome';
+} from '@chello/ui/lib/platform/runtime/electronWindowChrome';
 
 const DEFAULT_HOTKEY: Hotkey = { key: 'Space', modifiers: [] };
 

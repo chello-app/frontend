@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { formatForUser, parseUserInputToUtc } from '@dadei/ui/lib/platform/shared/time';
+import { formatForUser, parseUserInputToUtc } from '@chello/ui/lib/platform/shared/time';
 
 describe("time utils", () => {
   it("formats UTC timestamp for user timezone", () => {

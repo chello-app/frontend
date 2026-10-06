@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Brain, WandSparkles, Waves, type LucideIcon } from 'lucide-react';
-import { logoUrl } from '@dadei/ui/assets/brand';
+import { logoUrl } from '@chello/ui/assets/brand';
 import DesktopMomentum from '@/components/landing/DesktopMomentum';
 import FloatingAppMockup from '@/components/landing/FloatingAppMockup';
 import IntegrationsShowcase from '@/components/landing/IntegrationsShowcase';
@@ -87,7 +87,7 @@ export default function LandingPage() {
                   open assistant
                 </Link>
                 <a
-                  href="https://github.com/dadei-app/frontend/releases/latest"
+                  href="https://github.com/chello-app/frontend/releases/latest"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="dock-btn dock-btn-secondary rounded-lg px-2.5 py-1.5 text-[11px] font-secondary sm:rounded-xl sm:px-3 sm:py-2 sm:text-sm"
@@ -113,21 +113,21 @@ export default function LandingPage() {
               className="h-[52px] w-[52px] shrink-0 rounded-lg"
               aria-hidden
             />
-            <span className="font-brand text-3xl tracking-[0.2em] text-zinc-100 sm:text-4xl">dadei</span>
+            <span className="font-brand text-3xl tracking-[0.2em] text-zinc-100 sm:text-4xl">chello</span>
           </div>
           <div className="grid items-center gap-6 sm:gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
             <div>
               <SectionHeading
                 compact
-                eyebrow="Meet dadei"
+                eyebrow="Meet chello"
                 title="the assistant you forget about, until you need it."
-                body="dadei keeps your context organized across your day, then shows up instantly when you ask for it."
+                body="chello keeps your context organized across your day, then shows up instantly when you ask for it."
               />
               <p className="mt-4 max-w-2xl rounded-xl border border-white/10 bg-zinc-900/60 px-4 py-3 text-sm leading-relaxed text-zinc-300 font-secondary sm:mt-6 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-base">
                 <span className="font-medium text-emerald-200">
                   "who was i just talking to?" "when did i last talk to mark?"
                 </span>{' '}
-                dadei is built for those moments. trigger it like a voice assistant when you want something
+                chello is built for those moments. trigger it like a voice assistant when you want something
                 done fast.
               </p>
             </div>
@@ -148,7 +148,7 @@ export default function LandingPage() {
               className="relative z-10"
             >
               <SectionHeading
-                eyebrow="why dadei?"
+                eyebrow="why chello?"
                 title="named after my grandmother, dadi."
                 body="growing up, she made sure i was fed, happy, and on track. she focused on the things i did not have to think about, because she wanted me to have a better life."
               />
@@ -163,7 +163,7 @@ export default function LandingPage() {
               className="relative z-10 mt-10 max-w-5xl text-2xl leading-snug text-zinc-100 font-secondary sm:text-3xl"
             >
               <span className="text-emerald-200/90">"</span>
-              <span> dadei carries that same spirit: quiet support, thoughtful reminders, and genuine care behind every nudge. </span>
+              <span> chello carries that same spirit: quiet support, thoughtful reminders, and genuine care behind every nudge. </span>
               <span className="text-emerald-200/90">"</span>
             </motion.p>
           </div>
@@ -175,7 +175,7 @@ export default function LandingPage() {
               compact
               eyebrow="How it works"
               title="from captured moments to real follow-through."
-              body="dadei uses ai to organize context, answer recall questions, and turn your requests into reminders, drafts, and follow-ups."
+              body="chello uses ai to organize context, answer recall questions, and turn your requests into reminders, drafts, and follow-ups."
             />
             <div className="mt-6 grid gap-3 sm:mt-10 sm:gap-5 lg:grid-cols-3">
               {[
@@ -195,7 +195,7 @@ export default function LandingPage() {
                   step: '03',
                   icon: WandSparkles,
                   title: 'let it handle follow-through',
-                  body: 'dadei can draft reminders, texts, emails, and act like a voice assistant.',
+                  body: 'chello can draft reminders, texts, emails, and act like a voice assistant.',
                 },
               ].map((item: { step: string; icon: LucideIcon; title: string; body: string }, i) => (
                 <motion.div
@@ -223,7 +223,7 @@ export default function LandingPage() {
         <section id="capabilities" className="mx-auto w-full max-w-[1240px] px-5 py-14 sm:px-8">
           <SectionHeading
             eyebrow="plugins & integrations"
-            title="connect your accounts, then let dadei act."
+            title="connect your accounts, then let chello act."
             body="Sign in with Google, Microsoft, or Apple. Link work and personal inboxes, pick defaults for mail and calendar, and use always-on realtime data — no extra setup."
           />
           <IntegrationsShowcase />
@@ -243,7 +243,7 @@ export default function LandingPage() {
               className="h-7 w-7 shrink-0 rounded-lg"
               aria-hidden
             />
-            <span className="font-brand text-xl tracking-[0.18em] text-zinc-100">dadei</span>
+            <span className="font-brand text-xl tracking-[0.18em] text-zinc-100">chello</span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-zinc-300 font-secondary">
             <Link to="/privacy" className="hover:text-zinc-100">
@@ -253,7 +253,7 @@ export default function LandingPage() {
               Terms
             </Link>
             <a
-              href="https://github.com/dadei-app/frontend/releases/latest"
+              href="https://github.com/chello-app/frontend/releases/latest"
               className="hover:text-zinc-100"
               target="_blank"
               rel="noopener noreferrer"
@@ -261,7 +261,7 @@ export default function LandingPage() {
               Download desktop
             </a>
             <a
-              href="https://github.com/dadei-app/frontend/issues/new/choose"
+              href="https://github.com/chello-app/frontend/issues/new/choose"
               className="hover:text-zinc-100"
               target="_blank"
               rel="noopener noreferrer"

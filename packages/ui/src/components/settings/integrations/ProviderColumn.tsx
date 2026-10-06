@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Loader2, Sparkles } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
-import type { ProviderHealth } from '@dadei/ui/types/integrations.types';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
+import type { ProviderHealth } from '@chello/ui/types/integrations.types';
 import { IntegrationCard } from './IntegrationCard';
 import { workspaceServiceDisplayName } from './serviceDisplayNames';
 

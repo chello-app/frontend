@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   formatToolResultUserMessage,
   sanitizeTechnicalMessage,
-} from '@dadei/ui/lib/platform/errors/userMessage';
+} from '@chello/ui/lib/platform/errors/userMessage';
 
 describe('sanitizeTechnicalMessage', () => {
   it('emits a user-facing message for overload errors', () => {

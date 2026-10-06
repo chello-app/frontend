@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { liveCommandCaptionText, submitCommandText } from '@dadei/ui/lib/assistant/voice/command/commandCaption';
+import { liveCommandCaptionText, submitCommandText } from '@chello/ui/lib/assistant/voice/command/commandCaption';
 
 describe('liveCommandCaptionText', () => {
   it('keeps the full sanitized transcript while listening', () => {
@@ -13,7 +13,7 @@ describe('liveCommandCaptionText', () => {
 describe('submitCommandText', () => {
   it('strips wake words only when submitting a wake command', () => {
     expect(submitCommandText('Assistant, tell me the weather', false)).toBe('tell me the weather');
-    expect(submitCommandText('Dadei what time is it', false)).toBe('what time is it');
+    expect(submitCommandText('Chello what time is it', false)).toBe('what time is it');
     expect(submitCommandText('hey jarvis whats my birthday', false)).toBe('whats my birthday');
   });
 

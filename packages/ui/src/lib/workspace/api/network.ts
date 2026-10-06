@@ -1,4 +1,4 @@
-import { api } from '@dadei/ui/lib/workspace/api/http/client';
+import { api } from '@chello/ui/lib/workspace/api/http/client';
 
 export interface NetworkResponse {
   id: string;

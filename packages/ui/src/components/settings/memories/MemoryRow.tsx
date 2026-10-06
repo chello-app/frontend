@@ -1,12 +1,12 @@
-import SplitDeleteToolbar from '@dadei/ui/components/ui/SplitDeleteToolbar';
-import type { EpisodicMemory } from '@dadei/ui/types/models.types';
+import SplitDeleteToolbar from '@chello/ui/components/ui/SplitDeleteToolbar';
+import type { EpisodicMemory } from '@chello/ui/types/models.types';
 import {
   firstEvidenceQuote,
   formatActionWhen,
   formatConfidence,
   formatMetaLine,
   resolveMemoryConfidence,
-} from '@dadei/ui/lib/workspace/display/actionDisplay';
+} from '@chello/ui/lib/workspace/display/actionDisplay';
 
 type MemorySettingsRowProps = {
   memory: EpisodicMemory;

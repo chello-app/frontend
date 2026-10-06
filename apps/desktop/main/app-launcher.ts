@@ -17,7 +17,7 @@ async function runCommand(command: string, args: string[] = [], env?: NodeJS.Pro
 
 const WINDOWS_OPEN_APP_PS = `
 $ErrorActionPreference = 'Stop'
-$query = [string]$env:DADEI_APP_QUERY
+$query = [string]$env:CHELLO_APP_QUERY
 if ([string]::IsNullOrWhiteSpace($query)) { exit 1 }
 $q = $query.Trim()
 $pattern = "*$q*"
@@ -107,7 +107,7 @@ async function openAppWindows(name: string): Promise<boolean> {
   return runCommand(
     'powershell',
     ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', WINDOWS_OPEN_APP_PS],
-    { DADEI_APP_QUERY: name },
+    { CHELLO_APP_QUERY: name },
   );
 }
 

@@ -1,7 +1,7 @@
 import type { QueryClient } from '@tanstack/react-query';
-import { INTERACTION_PANEL_RECENT_LIMIT } from '@dadei/ui/lib/platform/query/constants';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
-import type { Conversation, Interaction } from '@dadei/ui/types/models.types';
+import { INTERACTION_PANEL_RECENT_LIMIT } from '@chello/ui/lib/platform/query/constants';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
+import type { Conversation, Interaction } from '@chello/ui/types/models.types';
 
 export function removeAllConversationQueries(queryClient: QueryClient) {
   queryClient.removeQueries({ queryKey: queryKeys.conversations });

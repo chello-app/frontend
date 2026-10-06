@@ -1,23 +1,23 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { Clock3, CloudSun, Globe, Map as MapIcon, Unplug } from 'lucide-react';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
-import { useTutorialSettingsTourActive } from '@dadei/ui/contexts/TutorialContext';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
+import { useTutorialSettingsTourActive } from '@chello/ui/contexts/TutorialContext';
 import {
   triggerProviderOAuth,
   type OAuthProvider,
-} from '@dadei/ui/lib/platform/auth/providerAuth';
-import { getUserErrorMessage } from '@dadei/ui/lib/platform/errors/userMessage';
-import { useAuthMeQuery, useIntegrationsStatusQuery } from '@dadei/ui/lib/platform/query/queryHooks';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
-import { settingsReturnPath } from '@dadei/ui/lib/platform/runtime/assistantPaths';
-import { authApi } from '@dadei/ui/lib/workspace/api/auth';
-import { serviceApi } from '@dadei/ui/lib/workspace/api/service';
-import { GridTile, SettingsGrid4, type SettingsPanelProps } from '@dadei/ui/components/settings/layout';
-import { GlassAlertModal } from '@dadei/ui/components/ui/GlassModal';
-import type { ProviderHealth } from '@dadei/ui/types/integrations.types';
-import type { UserMe } from '@dadei/ui/types/auth.types';
+} from '@chello/ui/lib/platform/auth/providerAuth';
+import { getUserErrorMessage } from '@chello/ui/lib/platform/errors/userMessage';
+import { useAuthMeQuery, useIntegrationsStatusQuery } from '@chello/ui/lib/platform/query/queryHooks';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
+import { settingsReturnPath } from '@chello/ui/lib/platform/runtime/assistantPaths';
+import { authApi } from '@chello/ui/lib/workspace/api/auth';
+import { serviceApi } from '@chello/ui/lib/workspace/api/service';
+import { GridTile, SettingsGrid4, type SettingsPanelProps } from '@chello/ui/components/settings/layout';
+import { GlassAlertModal } from '@chello/ui/components/ui/GlassModal';
+import type { ProviderHealth } from '@chello/ui/types/integrations.types';
+import type { UserMe } from '@chello/ui/types/auth.types';
 import { IntegrationCard } from './IntegrationCard';
 import { PrimaryProviderSelector } from './PrimaryProviderSelector';
 import { ProviderColumn } from './ProviderColumn';

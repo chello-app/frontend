@@ -1,9 +1,9 @@
-import type { AssistantBubbleStatus, CommandMode, CommandState } from '@dadei/ui/types/command.types';
+import type { AssistantBubbleStatus, CommandMode, CommandState } from '@chello/ui/types/command.types';
 import {
   INITIAL_ASSISTANT_STATE,
   type AssistantAction,
   type AssistantState,
-} from '@dadei/ui/types/assistant.types';
+} from '@chello/ui/types/assistant.types';
 
 function clearServiceStateSyncPending(state: AssistantState): AssistantState {
   return {

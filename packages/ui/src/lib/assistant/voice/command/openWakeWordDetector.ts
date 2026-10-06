@@ -1,7 +1,7 @@
 import * as ort from 'onnxruntime-web';
 import melUrl from '../../audio/models/melspectrogram.onnx?url';
 import embeddingUrl from '../../audio/models/embedding_model.onnx?url';
-import { SAMPLE_RATE } from '@dadei/ui/lib/assistant/audio/constants';
+import { SAMPLE_RATE } from '@chello/ui/lib/assistant/audio/constants';
 import {
   DEFAULT_WAKE_THRESHOLD,
   DEFAULT_WAKE_WORD_CLASSIFIERS,
@@ -15,9 +15,9 @@ import {
   OPEN_WAKEWORD_FRAME_SAMPLES,
   ORT_WASM_DIST_URL,
   PROCESSOR_BUFFER_SAMPLES,
-} from '@dadei/ui/lib/assistant/voice/command/constants';
+} from '@chello/ui/lib/assistant/voice/command/constants';
 
-export type WakeWordLabel = 'hey_dadei' | 'hey_jarvis';
+export type WakeWordLabel = 'hey_chello' | 'hey_jarvis';
 
 export interface WakeWordClassifierConfig {
   label: WakeWordLabel;

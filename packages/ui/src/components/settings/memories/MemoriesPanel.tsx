@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useService } from '@dadei/ui/contexts/ServiceContext';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
-import { getUserErrorMessage } from '@dadei/ui/lib/platform/errors/userMessage';
-import type { EpisodicMemory } from '@dadei/ui/types/models.types';
+import { useService } from '@chello/ui/contexts/ServiceContext';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
+import { getUserErrorMessage } from '@chello/ui/lib/platform/errors/userMessage';
+import type { EpisodicMemory } from '@chello/ui/types/models.types';
 import { MemorySettingsRow } from './MemoryRow';
-import { GridTile, SettingsGrid4 } from '@dadei/ui/components/settings/layout';
+import { GridTile, SettingsGrid4 } from '@chello/ui/components/settings/layout';
 
 function MemorySection({
   emptyTitle,

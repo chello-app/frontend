@@ -79,7 +79,7 @@ if (process.platform === 'darwin') {
   rmSync(iconsetDir, { recursive: true, force: true });
 }
 
-// og-image — branded lockup: stylized mark + outlined Poiret One "dadei" wordmark,
+// og-image — branded lockup: stylized mark + outlined Poiret One "chello" wordmark,
 // centered on a zinc card. Text is outlined to paths so no system font is required.
 {
   const OG_W = 1200;

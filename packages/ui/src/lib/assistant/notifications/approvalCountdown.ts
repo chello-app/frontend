@@ -1,4 +1,4 @@
-import { parseApiDateTimeMs } from '@dadei/ui/lib/platform/shared/parseApiDateTime';
+import { parseApiDateTimeMs } from '@chello/ui/lib/platform/shared/parseApiDateTime';
 
 export type ApprovalCountdownProgress = {
   initialScaleX: number;

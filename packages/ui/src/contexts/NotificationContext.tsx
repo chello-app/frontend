@@ -13,10 +13,10 @@ import {
 import { flushSync } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useQueryClient } from '@tanstack/react-query';
-import Banner, { type BannerExitMode } from '@dadei/ui/components/notifications/Banner';
-import Toast from '@dadei/ui/components/notifications/Toast';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
-import { actionsApi } from '@dadei/ui/lib/workspace/api/actions';
+import Banner, { type BannerExitMode } from '@chello/ui/components/notifications/Banner';
+import Toast from '@chello/ui/components/notifications/Toast';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
+import { actionsApi } from '@chello/ui/lib/workspace/api/actions';
 import {
   BANNER_ENTER_SPRING,
   BANNER_PUSH_SPRING,
@@ -27,14 +27,14 @@ import {
   stackContainerHeight,
   stackLayoutForSlot,
   type StackBanner,
-} from '@dadei/ui/lib/assistant/notifications/bannerStack';
-import { playNotificationPing } from '@dadei/ui/lib/assistant/notifications/notificationSound';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
-import { ToastType, type NetworkAction } from '@dadei/ui/types/models.types';
+} from '@chello/ui/lib/assistant/notifications/bannerStack';
+import { playNotificationPing } from '@chello/ui/lib/assistant/notifications/notificationSound';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
+import { ToastType, type NetworkAction } from '@chello/ui/types/models.types';
 import {
   networkActionsToBannerItems,
   normalizeNotificationActions,
-} from '@dadei/ui/lib/assistant/notifications/actionBannerSync';
+} from '@chello/ui/lib/assistant/notifications/actionBannerSync';
 
 const DEFAULT_BANNER_DURATION_MS = 10_000;
 const STACK_OPACITY_EASE = [0.22, 1, 0.36, 1] as const;

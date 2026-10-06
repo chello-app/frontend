@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@dadei/ui': path.resolve(__dirname, '../../../packages/ui/src'),
+        '@chello/ui': path.resolve(__dirname, '../../../packages/ui/src'),
       },
     },
     build: {

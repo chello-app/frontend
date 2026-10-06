@@ -1,13 +1,13 @@
-import { AUTO_FIRE_DELAY_MS } from '@dadei/ui/lib/assistant/notifications/constants';
-import type { BannerItem } from '@dadei/ui/contexts/NotificationContext';
-import type { NetworkAction } from '@dadei/ui/types/models.types';
+import { AUTO_FIRE_DELAY_MS } from '@chello/ui/lib/assistant/notifications/constants';
+import type { BannerItem } from '@chello/ui/contexts/NotificationContext';
+import type { NetworkAction } from '@chello/ui/types/models.types';
 import {
   actionBannerMeta,
   actionDisplayTitle,
   actionDomainLabel,
   isNotificationAction,
   resolveActionOperation,
-} from '@dadei/ui/lib/workspace/display/actionDisplay';
+} from '@chello/ui/lib/workspace/display/actionDisplay';
 
 /** Dedupe by id and keep API order (active first, then pending FIFO). */
 export function normalizeNotificationActions(actions: NetworkAction[]): NetworkAction[] {

@@ -10,7 +10,7 @@ import {
   stackEdgeMaskStyle,
   userBubblePhase,
   userBubblePlacement,
-} from '@dadei/ui/lib/assistant/voice/ui/commandBubbleMotion';
+} from '@chello/ui/lib/assistant/voice/ui/commandBubbleMotion';
 
 const noText = { isInterim: false, userText: '', followUpListenOpen: false };
 const withText = { isInterim: false, userText: 'Set a reminder', followUpListenOpen: false };
@@ -35,7 +35,7 @@ describe('commandBubbleMotion', () => {
     expect(shouldShowLiveUserBubble('dock', '', true)).toBe(true);
   });
 
-  it('keeps submitted follow-up text in the stack while dadei responds', () => {
+  it('keeps submitted follow-up text in the stack while chello responds', () => {
     expect(userBubblePlacement('follow_up', true, withText)).toBe('stack');
     expect(userBubblePhase('follow_up', 'stack')).toBe('settled');
     expect(isUserCaptureLive('stack', 'settled')).toBe(false);

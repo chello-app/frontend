@@ -2,8 +2,8 @@ import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
 import { openDefaultBrowserOAuthWindow } from './browser-oauth-window';
 
-/** Must match backend `DADEI_DESKTOP_OAUTH_ORIGIN`. */
-export const DESKTOP_OAUTH_RETURN_ORIGIN = 'dadei://oauth';
+/** Must match backend `CHELLO_DESKTOP_OAUTH_ORIGIN`. */
+export const DESKTOP_OAUTH_RETURN_ORIGIN = 'chello://oauth';
 
 const OAUTH_FLOW_TIMEOUT_MS = 3 * 60 * 1000;
 
@@ -29,7 +29,7 @@ let getMainWindow: (() => BrowserWindow | null) | null = null;
 function parseOAuthCallbackUrl(rawUrl: string): OAuthCallbackParams | null {
   try {
     const parsed = new URL(rawUrl);
-    if (parsed.protocol !== 'dadei:' || parsed.hostname !== 'oauth') {
+    if (parsed.protocol !== 'chello:' || parsed.hostname !== 'oauth') {
       return null;
     }
     if (!parsed.pathname.endsWith('/callback')) {
@@ -56,7 +56,7 @@ function settingsSectionFromOAuthNext(next?: string): string {
   if (!next) return 'integrations';
   try {
     const path = next.startsWith('/') ? next : `/${next}`;
-    const section = new URL(path, 'https://dadei.local').searchParams.get('settings');
+    const section = new URL(path, 'https://chello.local').searchParams.get('settings');
     const valid = new Set([
       'integrations',
       'memories',
@@ -141,12 +141,12 @@ export function registerDesktopProtocolClient(): void {
   if (process.defaultApp) {
     // `electron .` passes "." as argv[1]; protocol callbacks launch from system32, so store an absolute path.
     const appPath = path.resolve(process.argv[1] ?? process.cwd());
-    app.setAsDefaultProtocolClient('dadei', process.execPath, [appPath]);
+    app.setAsDefaultProtocolClient('chello', process.execPath, [appPath]);
   } else {
-    app.setAsDefaultProtocolClient('dadei');
+    app.setAsDefaultProtocolClient('chello');
   }
 }
 
 export function extractProtocolUrlFromArgv(argv: string[]): string | undefined {
-  return argv.find((arg) => arg.startsWith('dadei://'));
+  return argv.find((arg) => arg.startsWith('chello://'));
 }

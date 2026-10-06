@@ -1,5 +1,5 @@
 {
-  "name": "dadei-frontend",
+  "name": "chello-frontend",
   "version": "6.2.1",
   "private": true,
   "workspaces": [
@@ -12,9 +12,9 @@
     "dev:desktop": "npm run dev --workspace=apps/desktop",
     "build:website": "npm run build --workspace=apps/website",
     "build:desktop": "npm run build --workspace=apps/desktop",
-    "build:ui": "npm run build --workspace=@dadei/ui",
+    "build:ui": "npm run build --workspace=@chello/ui",
     "package:desktop": "npm run package --workspace=apps/desktop",
-    "test": "npm run test --workspace=@dadei/ui",
+    "test": "npm run test --workspace=@chello/ui",
     "check:versions": "node scripts/check-versions.mjs",
     "check:version-bump": "node scripts/check-version-bump.mjs",
     "generate:brand": "node scripts/generate-brand-assets.mjs",

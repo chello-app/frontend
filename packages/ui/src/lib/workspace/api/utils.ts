@@ -1,4 +1,4 @@
-import { API_CONFIG } from "@dadei/ui/lib/workspace/api/http/constants";
+import { API_CONFIG } from "@chello/ui/lib/workspace/api/http/constants";
 
 export interface ClientIpAddresses {
     local: string;

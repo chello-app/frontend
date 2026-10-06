@@ -1,24 +1,24 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import MicrophoneButton from '@dadei/ui/components/MicrophoneButton';
-import { AudioContext } from '@dadei/ui/contexts/AudioContext';
+import MicrophoneButton from '@chello/ui/components/MicrophoneButton';
+import { AudioContext } from '@chello/ui/contexts/AudioContext';
 
 const mockSubmitMicIntent = vi.fn();
 
-vi.mock('@dadei/ui/contexts/SystemContext', () => ({
+vi.mock('@chello/ui/contexts/SystemContext', () => ({
   useSystem: () => ({
     matchesHotkey: (event: KeyboardEvent) => event.code === 'Space',
   }),
 }));
 
-vi.mock('@dadei/ui/contexts/ServiceContext', () => ({
+vi.mock('@chello/ui/contexts/ServiceContext', () => ({
   useService: () => ({
     permissionsGateOpen: false,
   }),
 }));
 
-vi.mock('@dadei/ui/contexts/AssistantRuntimeContext', () => ({
+vi.mock('@chello/ui/contexts/AssistantRuntimeContext', () => ({
   useAssistantRuntimeState: () => ({
     serviceMode: 'ambient',
     commandState: 'idle',
@@ -34,7 +34,7 @@ vi.mock('@dadei/ui/contexts/AssistantRuntimeContext', () => ({
   }),
 }));
 
-vi.mock('@dadei/ui/lib/assistant/lifecycle/useMicIntent', () => ({
+vi.mock('@chello/ui/lib/assistant/lifecycle/useMicIntent', () => ({
   useMicIntent: () => ({
     submitMicIntent: mockSubmitMicIntent,
     inputsInert: false,
@@ -49,11 +49,11 @@ vi.mock('@dadei/ui/lib/assistant/lifecycle/useMicIntent', () => ({
   }),
 }));
 
-vi.mock('@dadei/ui/lib/assistant/lifecycle/useDeviceCapBlocked', () => ({
+vi.mock('@chello/ui/lib/assistant/lifecycle/useDeviceCapBlocked', () => ({
   useDeviceCapBlocked: () => false,
 }));
 
-vi.mock('@dadei/ui/contexts/TutorialContext', () => ({
+vi.mock('@chello/ui/contexts/TutorialContext', () => ({
   useTutorialEngaged: () => false,
 }));
 function renderMic(extra?: { disableSpaceToggle?: boolean }) {

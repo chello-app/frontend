@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { logoUrl } from '@dadei/ui/assets/brand';
+import { logoUrl } from '@chello/ui/assets/brand';
 
 export function LegalPageShell({
   title,
@@ -26,7 +26,7 @@ export function LegalPageShell({
               className="h-9 w-9 shrink-0 rounded-lg"
               aria-hidden
             />
-            <span className="font-brand text-xl tracking-[0.18em] text-zinc-100">dadei</span>
+            <span className="font-brand text-xl tracking-[0.18em] text-zinc-100">chello</span>
           </Link>
           <Link
             to="/"

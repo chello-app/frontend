@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { ReconnectBanner } from '@dadei/ui/components/settings/integrations/ReconnectBanner';
+import { ReconnectBanner } from '@chello/ui/components/settings/integrations/ReconnectBanner';
 
 describe('ReconnectBanner', () => {
   it('renders nothing when providers is empty', () => {

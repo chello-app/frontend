@@ -1,4 +1,4 @@
-import heyDadeiUrl from '../../audio/models/hey_dadei.onnx?url';
+import heyChelloUrl from '../../audio/models/hey_chello.onnx?url';
 import heyJarvisUrl from '../../audio/models/hey_jarvis.onnx?url';
 import type { WakeWordClassifierConfig } from './openWakeWordDetector';
 
@@ -16,6 +16,6 @@ export const ORT_WEB_VERSION = '1.26.0';
 export const ORT_WASM_DIST_URL = `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_WEB_VERSION}/dist/`;
 
 export const DEFAULT_WAKE_WORD_CLASSIFIERS: WakeWordClassifierConfig[] = [
-  { label: 'hey_dadei', url: heyDadeiUrl },
+  { label: 'hey_chello', url: heyChelloUrl },
   { label: 'hey_jarvis', url: heyJarvisUrl },
 ];

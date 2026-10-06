@@ -1,6 +1,6 @@
-import { isFinishTutorialStep, isTutorialConversationDeleteStep } from '@dadei/ui/lib/onboarding/tutorial/constants';
-import { isTutorialTestInteractionTarget } from '@dadei/ui/lib/onboarding/tutorial/fixtures';
-import type { TutorialStep } from '@dadei/ui/types/tutorial.types';
+import { isFinishTutorialStep, isTutorialConversationDeleteStep } from '@chello/ui/lib/onboarding/tutorial/constants';
+import { isTutorialTestInteractionTarget } from '@chello/ui/lib/onboarding/tutorial/fixtures';
+import type { TutorialStep } from '@chello/ui/types/tutorial.types';
 
 export function stepInteractables(step: TutorialStep): string[] {
   return step.interactables ?? [];

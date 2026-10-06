@@ -15,7 +15,7 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@dadei/ui/*": ["./src/*"]
+      "@chello/ui/*": ["./src/*"]
     }
   },
   "include": ["src/**/*", "tests/**/*"]

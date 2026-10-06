@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { sanitizeCommandTranscript } from '@dadei/ui/lib/assistant/voice/command/commandTranscriptSanitize';
-import { normalizeVisibleCommandText, stripLeadingWakeDisfluencies } from '@dadei/ui/lib/assistant/voice/command/wakeWordDetection';
-import { liveCommandCaptionText, submitCommandText } from '@dadei/ui/lib/assistant/voice/command/commandCaption';
+import { sanitizeCommandTranscript } from '@chello/ui/lib/assistant/voice/command/commandTranscriptSanitize';
+import { normalizeVisibleCommandText, stripLeadingWakeDisfluencies } from '@chello/ui/lib/assistant/voice/command/wakeWordDetection';
+import { liveCommandCaptionText, submitCommandText } from '@chello/ui/lib/assistant/voice/command/commandCaption';
 
 describe('sanitizeCommandTranscript', () => {
   it('preserves legitimate commands with what', () => {

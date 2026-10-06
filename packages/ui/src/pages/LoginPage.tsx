@@ -4,18 +4,18 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Loader2, Sparkles } from 'lucide-react';
 import { FcGoogle } from 'react-icons/fc';
 import { SiApple } from 'react-icons/si';
-import { logoUrl } from '@dadei/ui/assets/brand';
-import { Loading } from '@dadei/ui/components/Loading';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import { ASSISTANT_PATH } from '@dadei/ui/lib/platform/runtime/assistantPaths';
+import { logoUrl } from '@chello/ui/assets/brand';
+import { Loading } from '@chello/ui/components/Loading';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import { ASSISTANT_PATH } from '@chello/ui/lib/platform/runtime/assistantPaths';
 import {
   triggerProviderOAuth,
   type OAuthProvider,
-} from '@dadei/ui/lib/platform/auth/providerAuth';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
-import { getUserErrorMessage } from '@dadei/ui/lib/platform/errors/userMessage';
-import { TERMS_VERSION } from '@dadei/ui/lib/platform/legal/constants';
+} from '@chello/ui/lib/platform/auth/providerAuth';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
+import { getUserErrorMessage } from '@chello/ui/lib/platform/errors/userMessage';
+import { TERMS_VERSION } from '@chello/ui/lib/platform/legal/constants';
 
 const veilEase = [0.22, 1, 0.36, 1] as const;
 
@@ -236,14 +236,14 @@ export default function LoginPage() {
                   className="h-10 w-10 shrink-0 rounded-lg"
                   aria-hidden
                 />
-                <span className="font-brand text-2xl tracking-[0.2em] text-zinc-100">dadei</span>
+                <span className="font-brand text-2xl tracking-[0.2em] text-zinc-100">chello</span>
               </div>
               <h1 className="text-2xl font-semibold tracking-tight text-zinc-50 font-primary">Welcome</h1>
               <p className="mt-1.5 text-sm text-zinc-500 font-secondary">
                 Sign in to your intelligent voice workspace
               </p>
               <p className="mx-auto mt-2 max-w-[340px] font-secondary text-[11px] leading-snug text-zinc-500/80 sm:text-xs sm:leading-relaxed">
-                One dadei account, all your services. Sign in with any provider — matching emails link
+                One chello account, all your services. Sign in with any provider — matching emails link
                 automatically. In Settings you can connect other accounts too, even when the email differs.
               </p>
             </div>

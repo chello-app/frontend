@@ -39,7 +39,7 @@ export function parseSettingsSectionFromNext(
   if (!raw) return null;
   try {
     const path = raw.startsWith('/') ? raw : `/${raw}`;
-    const section = new URL(path, 'https://dadei.local').searchParams.get(SETTINGS_RETURN_QUERY);
+    const section = new URL(path, 'https://chello.local').searchParams.get(SETTINGS_RETURN_QUERY);
     if (section && isSettingsSidebarSection(section)) {
       return section;
     }

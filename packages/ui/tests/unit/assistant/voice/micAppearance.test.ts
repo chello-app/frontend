@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import { deriveMicAppearanceFromRuntime } from '@dadei/ui/lib/assistant/voice/micAppearance';
+import { deriveMicAppearanceFromRuntime } from '@chello/ui/lib/assistant/voice/micAppearance';
 
-import { INITIAL_ASSISTANT_STATE } from '@dadei/ui/types/assistant.types';
+import { INITIAL_ASSISTANT_STATE } from '@chello/ui/types/assistant.types';
 
 const tutorialOff = { tutorialActive: false };
 

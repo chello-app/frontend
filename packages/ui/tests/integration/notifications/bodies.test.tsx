@@ -4,21 +4,21 @@ import {
   ConversationDeleteBody,
   InteractionDeleteBody,
   PersonDeleteBody,
-} from '@dadei/ui/components/notifications/bodies';
+} from '@chello/ui/components/notifications/bodies';
 
 describe('notification bodies', () => {
   it('renders conversation delete details when expanded', () => {
     render(
       <ConversationDeleteBody
-        title="Getting started with dadei"
+        title="Getting started with chello"
         toolArgs={{
-          topic_summary: 'Getting started with dadei',
+          topic_summary: 'Getting started with chello',
           interaction_count: 4,
         }}
       />,
     );
 
-    expect(screen.getByText('Getting started with dadei')).toBeInTheDocument();
+    expect(screen.getByText('Getting started with chello')).toBeInTheDocument();
     expect(screen.getByText(/conversation and its interactions will be removed/i)).toBeInTheDocument();
     expect(screen.getByText('4 interactions')).toBeInTheDocument();
   });
@@ -26,34 +26,34 @@ describe('notification bodies', () => {
   it('renders interaction delete details when expanded', () => {
     render(
       <InteractionDeleteBody
-        title="Hey, this is dadei."
-        toolArgs={{ text: 'Hey, this is dadei.', topic_summary: 'Getting started with dadei' }}
+        title="Hey, this is chello."
+        toolArgs={{ text: 'Hey, this is chello.', topic_summary: 'Getting started with chello' }}
       />,
     );
 
-    expect(screen.getByText('Hey, this is dadei.')).toBeInTheDocument();
+    expect(screen.getByText('Hey, this is chello.')).toBeInTheDocument();
     expect(screen.getByText(/interaction will be removed/i)).toBeInTheDocument();
-    expect(screen.getByText(/Getting started with dadei/)).toBeInTheDocument();
+    expect(screen.getByText(/Getting started with chello/)).toBeInTheDocument();
   });
 
   it('renders person delete details when expanded', () => {
     render(
-      <PersonDeleteBody title="dadei" toolArgs={{ name: 'dadei' }} />,
+      <PersonDeleteBody title="chello" toolArgs={{ name: 'chello' }} />,
     );
 
-    expect(screen.getByText('dadei')).toBeInTheDocument();
+    expect(screen.getByText('chello')).toBeInTheDocument();
     expect(screen.getByText(/person and their interactions will be removed/i)).toBeInTheDocument();
   });
 
   it('hides expanded copy when compact', () => {
     render(
       <ConversationDeleteBody
-        title="Getting started with dadei"
+        title="Getting started with chello"
         compact
       />,
     );
 
-    expect(screen.getByText('Getting started with dadei')).toBeInTheDocument();
+    expect(screen.getByText('Getting started with chello')).toBeInTheDocument();
     expect(screen.queryByText(/will be removed/i)).not.toBeInTheDocument();
   });
 });

@@ -3,11 +3,11 @@ import type { LucideIcon } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
-import { veilEase } from '@dadei/ui/lib/platform/shared/motion';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
+import { veilEase } from '@chello/ui/lib/platform/shared/motion';
 import {
   settingsPrimaryButtonClass,
-} from '@dadei/ui/components/settings/layout';
+} from '@chello/ui/components/settings/layout';
 
 export type GlassModalLayer = 'assistant' | 'settings';
 

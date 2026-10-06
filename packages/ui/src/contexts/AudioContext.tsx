@@ -6,33 +6,33 @@ import {
   useRef,
   useState,
 } from 'react';
-import { useCommand, type CommandState } from '@dadei/ui/contexts/CommandContext';
-import { useAssistantRuntimeState } from '@dadei/ui/contexts/AssistantRuntimeContext';
+import { useCommand, type CommandState } from '@chello/ui/contexts/CommandContext';
+import { useAssistantRuntimeState } from '@chello/ui/contexts/AssistantRuntimeContext';
 import {
   selectVoiceEnrollmentActive,
   selectShouldForwardAudioChunks,
   selectShouldRunAudioPipeline,
   selectShouldStreamAudio,
-} from '@dadei/ui/lib/assistant/assistantRuntime';
-import { getRealtimeSessionId } from '@dadei/ui/lib/assistant/realtime/realtimeClient';
-import { sendRealtimeMessage, subscribeRealtimeMessages } from '@dadei/ui/lib/assistant/realtime/realtimeClient';
+} from '@chello/ui/lib/assistant/assistantRuntime';
+import { getRealtimeSessionId } from '@chello/ui/lib/assistant/realtime/realtimeClient';
+import { sendRealtimeMessage, subscribeRealtimeMessages } from '@chello/ui/lib/assistant/realtime/realtimeClient';
 import {
   notifyVoiceSpeechActivity,
   subscribeCommandCaptureRearm,
-} from '@dadei/ui/lib/assistant/voice/session/voiceSessionActivity';
+} from '@chello/ui/lib/assistant/voice/session/voiceSessionActivity';
 import {
   COMMAND_MIC_LEVEL_GAIN,
   FOLLOW_UP_SPEECH_RMS,
-} from '@dadei/ui/lib/assistant/voice/constants';
+} from '@chello/ui/lib/assistant/voice/constants';
 import {
   OpenWakeWordDetector,
   type WakeWordLabel,
-} from '@dadei/ui/lib/assistant/voice/command/openWakeWordDetector';
-import type { AudioSettings } from '@dadei/ui/types/electron';
-import { AUDIO_SETTINGS_CHANGED } from '@dadei/ui/lib/assistant/audio/audioSettingsEvents';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import { useService } from '@dadei/ui/contexts/ServiceContext';
-import { useTutorialContext, useTutorialEngaged } from '@dadei/ui/contexts/TutorialContext';
+} from '@chello/ui/lib/assistant/voice/command/openWakeWordDetector';
+import type { AudioSettings } from '@chello/ui/types/electron';
+import { AUDIO_SETTINGS_CHANGED } from '@chello/ui/lib/assistant/audio/audioSettingsEvents';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import { useService } from '@chello/ui/contexts/ServiceContext';
+import { useTutorialContext, useTutorialEngaged } from '@chello/ui/contexts/TutorialContext';
 
 const COMMAND_START_RETRY_MS = 500;
 const COMMAND_AUDIO_PROCESSOR_BUFFER_SIZE = 256;

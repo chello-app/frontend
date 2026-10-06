@@ -1,8 +1,8 @@
 import { Trash2 } from 'lucide-react';
 
-import { useMobileInteractionsSheet } from '@dadei/ui/components/MobileInteractionsSheet';
+import { useMobileInteractionsSheet } from '@chello/ui/components/MobileInteractionsSheet';
 
-import { ToolbarButton } from '@dadei/ui/components/ui/Toolbar';
+import { ToolbarButton } from '@chello/ui/components/ui/Toolbar';
 
 type MobileInteractionChromeProps = {
   clearAllDisabled: boolean;

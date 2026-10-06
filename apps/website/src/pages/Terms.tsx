@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import {
   TERMS_EFFECTIVE_DATE,
   TERMS_VERSION,
-} from '@dadei/ui/lib/platform/legal/constants';
+} from '@chello/ui/lib/platform/legal/constants';
 import { LegalPageShell } from '@/components/legal/LegalPageShell';
 
 export default function Terms() {
@@ -15,7 +15,7 @@ export default function Terms() {
       <section className="space-y-3">
         <h2 className="font-primary text-xl text-zinc-100">Agreement</h2>
         <p>
-          By creating an account or using dadei, you agree to these Terms of Service and our{' '}
+          By creating an account or using chello, you agree to these Terms of Service and our{' '}
           <Link to="/privacy" className="text-emerald-300 underline decoration-emerald-500/40 hover:text-emerald-200">
             Privacy Policy
           </Link>
@@ -26,7 +26,7 @@ export default function Terms() {
       <section className="space-y-3">
         <h2 className="font-primary text-xl text-zinc-100">The service</h2>
         <p>
-          dadei is a personal assistant that captures context from your day, answers recall
+          chello is a personal assistant that captures context from your day, answers recall
           questions, and helps with reminders, drafts, and integrations you connect. Features vary
           by platform and subscription tier. We may change or discontinue features with reasonable
           notice where practicable.
@@ -50,7 +50,7 @@ export default function Terms() {
         <h2 className="font-primary text-xl text-zinc-100">Acceptable use</h2>
         <p>You agree not to:</p>
         <ul className="list-disc space-y-2 pl-5">
-          <li>Use dadei to violate law or third-party rights</li>
+          <li>Use chello to violate law or third-party rights</li>
           <li>Attempt to probe, scrape, or disrupt our systems without authorization</li>
           <li>Upload malware or use the service to harass, spam, or impersonate others</li>
           <li>Circumvent subscription limits, retention controls, or security measures</li>
@@ -61,7 +61,7 @@ export default function Terms() {
         <h2 className="font-primary text-xl text-zinc-100">Voice, biometric, and third-party data</h2>
         <p>
           Microphone access and optional biometric voice features require your consent and
-          device-level permissions. When you connect external accounts, you authorize dadei to
+          device-level permissions. When you connect external accounts, you authorize chello to
           access data within the scopes you approve. You represent that you have the right to provide
           any content or credentials you supply.
         </p>
@@ -80,7 +80,7 @@ export default function Terms() {
       <section className="space-y-3">
         <h2 className="font-primary text-xl text-zinc-100">Intellectual property</h2>
         <p>
-          dadei and its branding, software, and documentation are owned by us or our licensors. You
+          chello and its branding, software, and documentation are owned by us or our licensors. You
           retain ownership of content you submit. You grant us a limited license to process that
           content solely to operate and improve the service.
         </p>
@@ -108,7 +108,7 @@ export default function Terms() {
       <section className="space-y-3">
         <h2 className="font-primary text-xl text-zinc-100">Termination</h2>
         <p>
-          You may stop using dadei at any time. We may suspend or terminate access for breach of
+          You may stop using chello at any time. We may suspend or terminate access for breach of
           these Terms or to protect the service. Provisions that by nature should survive termination
           (including disclaimers, limitations of liability, and dispute terms) will survive.
         </p>

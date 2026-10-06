@@ -1,5 +1,5 @@
-import { formatActionWhen } from '@dadei/ui/lib/workspace/display/actionDisplay';
-import { formatForUser } from '@dadei/ui/lib/platform/shared/time';
+import { formatActionWhen } from '@chello/ui/lib/workspace/display/actionDisplay';
+import { formatForUser } from '@chello/ui/lib/platform/shared/time';
 
 export function strArg(args: Record<string, unknown> | undefined, key: string): string | null {
   const value = args?.[key];

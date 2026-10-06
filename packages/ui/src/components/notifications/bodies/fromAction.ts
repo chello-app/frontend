@@ -1,4 +1,4 @@
-import type { NetworkAction } from '@dadei/ui/types/models.types';
+import type { NetworkAction } from '@chello/ui/types/models.types';
 import type { BannerContentProps } from './types';
 
 export function bannerContentFromAction(action: NetworkAction): BannerContentProps {

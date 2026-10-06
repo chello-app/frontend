@@ -4,11 +4,11 @@ import { MessageSquare } from 'lucide-react';
 import type { ConversationGroupView } from './types';
 import { accordionEase } from './constants';
 import { formatLocalDate, getConversationTitle } from './conversationUtils';
-import SplitDeleteToolbar from '@dadei/ui/components/ui/SplitDeleteToolbar';
+import SplitDeleteToolbar from '@chello/ui/components/ui/SplitDeleteToolbar';
 import InteractionCard from './InteractionCard';
-import { useTutorialTargetInteractive } from '@dadei/ui/contexts/TutorialContext';
-import { useMobileAssistant } from '@dadei/ui/lib/platform/hooks/useMobileAssistant';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { useTutorialTargetInteractive } from '@chello/ui/contexts/TutorialContext';
+import { useMobileAssistant } from '@chello/ui/lib/platform/hooks/useMobileAssistant';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 const HEADER_META_EASE = 'duration-[260ms] ease-[cubic-bezier(0.22,1,0.36,1)]';
 

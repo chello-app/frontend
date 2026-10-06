@@ -1,7 +1,7 @@
-import { api } from '@dadei/ui/lib/workspace/api/http/client';
-import { ENDPOINTS } from '@dadei/ui/lib/workspace/api/http/constants';
-import { buildEndpoint } from '@dadei/ui/lib/workspace/api/utils';
-import { Conversation } from '@dadei/ui/types/models.types';
+import { api } from '@chello/ui/lib/workspace/api/http/client';
+import { ENDPOINTS } from '@chello/ui/lib/workspace/api/http/constants';
+import { buildEndpoint } from '@chello/ui/lib/workspace/api/utils';
+import { Conversation } from '@chello/ui/types/models.types';
 
 export const conversationsApi = {
   /**

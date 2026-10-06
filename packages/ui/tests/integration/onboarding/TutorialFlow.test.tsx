@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Card from '@dadei/ui/components/tutorial/Card';
-import { buildTutorialSteps } from '@dadei/ui/lib/onboarding/tutorial/constants';
+import Card from '@chello/ui/components/tutorial/Card';
+import { buildTutorialSteps } from '@chello/ui/lib/onboarding/tutorial/constants';
 
 describe('Tutorial Card', () => {
   it('renders step content and advances via Next', async () => {

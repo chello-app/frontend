@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import { useService } from '@dadei/ui/contexts/ServiceContext';
-import { PermissionsPrompt } from '@dadei/ui/components/permissions/PermissionsPrompt';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { useService } from '@chello/ui/contexts/ServiceContext';
+import { PermissionsPrompt } from '@chello/ui/components/permissions/PermissionsPrompt';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 const CARD_SPRING = { type: 'spring' as const, stiffness: 420, damping: 34, mass: 0.85 };
 

@@ -1,17 +1,17 @@
-import type { TutorialStep } from '@dadei/ui/types/tutorial.types';
-import { TUTORIAL_INTERACTION_TARGET_KEYS } from '@dadei/ui/lib/onboarding/tutorial/fixtures';
+import type { TutorialStep } from '@chello/ui/types/tutorial.types';
+import { TUTORIAL_INTERACTION_TARGET_KEYS } from '@chello/ui/lib/onboarding/tutorial/fixtures';
 
 function settingsSections(isElectron: boolean): { id: string; title: string; body: string }[] {
   return [
     {
       id: 'integrations',
       title: 'Integrations',
-      body: 'Logging in with Google connects dadei to your workspace. It will have access to your calendar, emails, and other data sources to act on your behalf.',
+      body: 'Logging in with Google connects chello to your workspace. It will have access to your calendar, emails, and other data sources to act on your behalf.',
     },
     {
       id: 'memories',
       title: 'Memories',
-      body: 'Everything dadei has learned about you, plus incomplete plans and floated ideas, not yet complete.',
+      body: 'Everything chello has learned about you, plus incomplete plans and floated ideas, not yet complete.',
     },
     {
       id: 'account',
@@ -52,7 +52,7 @@ function settingsSections(isElectron: boolean): { id: string; title: string; bod
 const CORE_STEPS: TutorialStep[] = [
   {
     id: 'welcome',
-    title: 'Meet dadei',
+    title: 'Meet chello',
     body: "I'm an ambient assistant — I listen in the background, remember what matters, and help when you ask. The next couple of minutes will get you set up.",
     targetKey: null,
   },

@@ -26,8 +26,8 @@ export function openSettings(section?: string, action?: string) {
 export function showAboutDialog() {
   void dialog.showMessageBox({
     type: 'info',
-    title: 'About dadei',
-    message: 'dadei',
+    title: 'About chello',
+    message: 'chello',
     detail: `Version ${app.getVersion()}\n\nAmbient AI assistant.\nhttps://dadei.app`,
     buttons: ['OK'],
   });
@@ -45,7 +45,7 @@ function helpLinkItems(): MenuItemConstructorOptions[] {
     },
     {
       label: 'Report an Issue',
-      click: () => shell.openExternal('https://github.com/dadei-app/frontend/issues/new'),
+      click: () => shell.openExternal('https://github.com/chello-app/frontend/issues/new'),
     },
   ];
 }
@@ -62,14 +62,14 @@ function settingsAndAboutItems(): MenuItemConstructorOptions[] {
       click: () => openSettings('about', 'check-updates'),
     },
     { type: 'separator' },
-    { label: 'About dadei', click: showAboutDialog },
+    { label: 'About chello', click: showAboutDialog },
   ];
 }
 
 /** Tray / compact menus: show window plus the common app actions. */
 export function buildTrayMenuTemplate(showMainWindow: () => void): MenuItemConstructorOptions[] {
   return [
-    { label: 'Show dadei', click: showMainWindow },
+    { label: 'Show chello', click: showMainWindow },
     { type: 'separator' },
     ...settingsAndAboutItems(),
     { type: 'separator' },
@@ -139,7 +139,7 @@ export function buildApplicationMenu(): Menu | null {
         ...(isMac
           ? []
           : [
-              { label: 'About dadei', click: showAboutDialog },
+              { label: 'About chello', click: showAboutDialog },
               {
                 label: 'Settings…',
                 accelerator: 'CmdOrCtrl+,',

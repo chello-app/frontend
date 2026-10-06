@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
-import { logoUrl } from '@dadei/ui/assets/brand';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import type { UpdaterCheckResult } from '@dadei/ui/types/electron';
+import { logoUrl } from '@chello/ui/assets/brand';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import type { UpdaterCheckResult } from '@chello/ui/types/electron';
 import {
   SettingsBento,
   settingsPrimaryButtonClass,
   type SettingsPanelProps,
-} from '@dadei/ui/components/settings/layout';
+} from '@chello/ui/components/settings/layout';
 
 function openExternal(url: string) {
   if (window.electronAPI?.openExternal) {
@@ -105,7 +105,7 @@ export function AboutPanel({ pendingAction, onActionConsumed }: SettingsPanelPro
           className="h-20 w-20 shrink-0 rounded-lg"
           aria-hidden
         />
-        <span className="font-brand text-4xl tracking-wider text-zinc-100">dadei</span>
+        <span className="font-brand text-4xl tracking-wider text-zinc-100">chello</span>
       </div>
       <div>
         <p className="text-base text-zinc-500 font-secondary">

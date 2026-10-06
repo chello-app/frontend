@@ -1,11 +1,11 @@
-import { api } from '@dadei/ui/lib/workspace/api/http/client';
-import { API_CONFIG, ENDPOINTS } from '@dadei/ui/lib/workspace/api/http/constants';
+import { api } from '@chello/ui/lib/workspace/api/http/client';
+import { API_CONFIG, ENDPOINTS } from '@chello/ui/lib/workspace/api/http/constants';
 import type {
   IntegrationsStatusResponse,
   PrimaryProvidersPatch,
-} from '@dadei/ui/types/integrations.types';
-import type { CommandMode } from '@dadei/ui/types/command.types';
-import type { ServiceModeClaim } from '@dadei/ui/types/service.types';
+} from '@chello/ui/types/integrations.types';
+import type { CommandMode } from '@chello/ui/types/command.types';
+import type { ServiceModeClaim } from '@chello/ui/types/service.types';
 import { buildEndpoint, getClientIpAddresses, retryWithBackoff } from './utils';
 
 interface ClientRegistration {

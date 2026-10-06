@@ -16,7 +16,7 @@ const launchMessages = [
     appearAt: 4.0,
     readFor: 1.9,
   },
-  { side: 'right', text: 'you guys should try dadei', appearAt: 5.9, readFor: 1.5 },
+  { side: 'right', text: 'you guys should try chello', appearAt: 5.9, readFor: 1.5 },
 ] as const;
 
 export default function LaunchConversationIntro() {
@@ -77,7 +77,7 @@ export default function LaunchConversationIntro() {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: arrowRevealDelay, duration: 0.45, ease: 'easeOut' }}
         className="group absolute bottom-10 left-1/2 z-20 -translate-x-1/2 rounded-full border border-emerald-200/60 bg-emerald-300/20 px-6 py-3 text-sm tracking-[0.16em] text-emerald-50 shadow-[0_0_0_1px_rgba(167,243,208,0.3)_inset,0_18px_50px_-18px_rgba(16,185,129,0.95)] backdrop-blur-md transition hover:scale-[1.03] hover:bg-emerald-300/30"
-        aria-label="scroll to meet dadei"
+        aria-label="scroll to meet chello"
       >
         <motion.span
           aria-hidden

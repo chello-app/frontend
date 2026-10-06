@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { MapPin, Mic2, Monitor, type LucideIcon } from 'lucide-react';
 
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
 
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
 
-import { GridTile, SettingsGrid4 } from '@dadei/ui/components/settings/layout';
+import { GridTile, SettingsGrid4 } from '@chello/ui/components/settings/layout';
 
-import { PowerToggleButton, Toggle } from '@dadei/ui/components/settings/controls';
+import { PowerToggleButton, Toggle } from '@chello/ui/components/settings/controls';
 
 import type {
 
@@ -16,9 +16,9 @@ import type {
 
   DesktopPermissionStatus,
 
-} from '@dadei/ui/types/electron';
+} from '@chello/ui/types/electron';
 
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 
 

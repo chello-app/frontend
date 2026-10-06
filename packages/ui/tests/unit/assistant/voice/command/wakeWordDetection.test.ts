@@ -5,29 +5,29 @@ import {
   stripLeadingWakeDisfluencies,
   transcriptLikelyContainsWakeWord,
   transcriptStartsWithWakeCommand,
-} from '@dadei/ui/lib/assistant/voice/command/wakeWordDetection';
+} from '@chello/ui/lib/assistant/voice/command/wakeWordDetection';
 
 describe('stripLeadingWakeDisfluencies', () => {
   it('removes a chain of leading fillers', () => {
-    expect(stripLeadingWakeDisfluencies('Um, uh, Dadei')).toBe('Dadei');
+    expect(stripLeadingWakeDisfluencies('Um, uh, Chello')).toBe('Chello');
     expect(stripLeadingWakeDisfluencies('  okay,   so, well  dahdee')).toBe('dahdee');
   });
 
   it('caps strips at MAX_DISFLUENCY_STRIPS', () => {
-    expect(stripLeadingWakeDisfluencies('um um um um um Dadei')).toBe('um Dadei');
+    expect(stripLeadingWakeDisfluencies('um um um um um Chello')).toBe('um Chello');
   });
 });
 
 describe('normalizeTranscriptForWake', () => {
   it('trims then strips fillers', () => {
-    expect(normalizeTranscriptForWake('  Hey, Dadei  ')).toBe('Dadei');
+    expect(normalizeTranscriptForWake('  Hey, Chello  ')).toBe('Chello');
   });
 });
 
 describe('transcriptStartsWithWakeCommand', () => {
-  it('accepts Dadei variants at start', () => {
-    expect(transcriptStartsWithWakeCommand('Dadei')).toBe(true);
-    expect(transcriptStartsWithWakeCommand('dadei, what time')).toBe(true);
+  it('accepts Chello variants at start', () => {
+    expect(transcriptStartsWithWakeCommand('Chello')).toBe(true);
+    expect(transcriptStartsWithWakeCommand('chello, what time')).toBe(true);
     expect(transcriptStartsWithWakeCommand('Dah-dee please')).toBe(true);
   });
 
@@ -37,17 +37,17 @@ describe('transcriptStartsWithWakeCommand', () => {
   });
 
   it('accepts wake after leading disfluencies', () => {
-    expect(transcriptStartsWithWakeCommand('Um, Dadei')).toBe(true);
+    expect(transcriptStartsWithWakeCommand('Um, Chello')).toBe(true);
     expect(transcriptStartsWithWakeCommand('Uh, Assistant, remind me')).toBe(true);
   });
 
   it('rejects mid-sentence wake', () => {
-    expect(transcriptStartsWithWakeCommand('I said and Dadei earlier')).toBe(false);
+    expect(transcriptStartsWithWakeCommand('I said and Chello earlier')).toBe(false);
     expect(transcriptStartsWithWakeCommand('talk to my assistant, please')).toBe(false);
     expect(transcriptStartsWithWakeCommand('I really like my assistant')).toBe(false);
   });
 
-  it('accepts phonetic assistant and dadei mishearings at start', () => {
+  it('accepts phonetic assistant and chello mishearings at start', () => {
     expect(transcriptStartsWithWakeCommand('assisted')).toBe(true);
     expect(transcriptStartsWithWakeCommand('Assisted, hello')).toBe(true);
     expect(transcriptStartsWithWakeCommand('daddy')).toBe(true);
@@ -74,8 +74,8 @@ describe('transcriptStartsWithWakeCommand', () => {
 });
 
 describe('transcriptLikelyContainsWakeWord', () => {
-  it('finds assistant or dadei shapes in text', () => {
-    expect(transcriptLikelyContainsWakeWord('foo Dadei bar')).toBe(true);
+  it('finds assistant or chello shapes in text', () => {
+    expect(transcriptLikelyContainsWakeWord('foo Chello bar')).toBe(true);
     expect(transcriptLikelyContainsWakeWord('my assistant is here')).toBe(true);
   });
 });
@@ -83,7 +83,7 @@ describe('transcriptLikelyContainsWakeWord', () => {
 describe('normalizeVisibleCommandText', () => {
   it('strips wake words and leading punctuation', () => {
     expect(normalizeVisibleCommandText('Assistant, set a reminder')).toBe('set a reminder');
-    expect(normalizeVisibleCommandText('Dadei what time is it')).toBe('what time is it');
+    expect(normalizeVisibleCommandText('Chello what time is it')).toBe('what time is it');
   });
 
   it('handles disfluencies before wake words', () => {

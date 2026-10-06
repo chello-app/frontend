@@ -1,16 +1,16 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ServicePermissionsGate } from '@dadei/ui/components/permissions/ServicePermissionsGate';
+import { ServicePermissionsGate } from '@chello/ui/components/permissions/ServicePermissionsGate';
 
 const mockComplete = vi.fn();
 const mockUseService = vi.fn();
 
-vi.mock('@dadei/ui/contexts/ServiceContext', () => ({
+vi.mock('@chello/ui/contexts/ServiceContext', () => ({
   useService: () => mockUseService(),
 }));
 
-vi.mock('@dadei/ui/components/permissions/PermissionsPrompt', () => ({
+vi.mock('@chello/ui/components/permissions/PermissionsPrompt', () => ({
   PermissionsPrompt: ({
     onRequiredGrantedChange,
     onAllGrantedChange,

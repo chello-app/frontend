@@ -1,12 +1,12 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import LoginPage from '@dadei/ui/pages/LoginPage';
+import LoginPage from '@chello/ui/pages/LoginPage';
 
 const mockTriggerProviderOAuth = vi.fn();
 const mockNavigate = vi.fn();
 
-vi.mock('@dadei/ui/lib/platform/auth/providerAuth', () => ({
+vi.mock('@chello/ui/lib/platform/auth/providerAuth', () => ({
   triggerProviderOAuth: (...args: unknown[]) => mockTriggerProviderOAuth(...args),
 }));
 
@@ -18,7 +18,7 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-vi.mock('@dadei/ui/contexts/AuthContext', () => ({
+vi.mock('@chello/ui/contexts/AuthContext', () => ({
   useAuth: () => ({
     isAuthenticated: false,
     isLoading: false,
@@ -28,7 +28,7 @@ vi.mock('@dadei/ui/contexts/AuthContext', () => ({
   }),
 }));
 
-vi.mock('@dadei/ui/contexts/SystemContext', () => ({
+vi.mock('@chello/ui/contexts/SystemContext', () => ({
   useSystem: () => ({
     isElectron: false,
     viewportFillClass: 'min-h-screen',

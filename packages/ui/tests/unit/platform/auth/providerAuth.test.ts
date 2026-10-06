@@ -1,10 +1,10 @@
 // @vitest-environment happy-dom
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { DESKTOP_OAUTH_RETURN_ORIGIN } from '@dadei/ui/lib/platform/auth/desktopOAuth';
-import { triggerProviderOAuth } from '@dadei/ui/lib/platform/auth/providerAuth';
-import { authApi } from '@dadei/ui/lib/workspace/api/auth';
+import { DESKTOP_OAUTH_RETURN_ORIGIN } from '@chello/ui/lib/platform/auth/desktopOAuth';
+import { triggerProviderOAuth } from '@chello/ui/lib/platform/auth/providerAuth';
+import { authApi } from '@chello/ui/lib/workspace/api/auth';
 
-vi.mock('@dadei/ui/lib/workspace/api/auth', () => ({
+vi.mock('@chello/ui/lib/workspace/api/auth', () => ({
   authApi: {
     createOAuthLinkToken: vi.fn().mockResolvedValue('link-token-test'),
   },
@@ -20,7 +20,7 @@ describe('triggerProviderOAuth', () => {
     saveTokens.mockResolvedValue(undefined);
     delete (window as { electronAPI?: unknown }).electronAPI;
     Object.defineProperty(window, 'location', {
-      value: { href: '', origin: 'https://app.dadei.test' },
+      value: { href: '', origin: 'https://app.chello.test' },
       writable: true,
       configurable: true,
     });
@@ -38,7 +38,7 @@ describe('triggerProviderOAuth', () => {
 
     expect(window.location.href).toContain('/auth/google/web/login');
     expect(window.location.href).toContain('next=%2Fassistant');
-    expect(window.location.href).toContain('spa_origin=https%3A%2F%2Fapp.dadei.test');
+    expect(window.location.href).toContain('spa_origin=https%3A%2F%2Fapp.chello.test');
   });
 
   it('redirects to the microsoft web login url on web', async () => {

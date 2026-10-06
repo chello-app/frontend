@@ -1,10 +1,10 @@
-import { API_BASE_URL } from '@dadei/ui/lib/workspace/api/http/client';
-import { ENDPOINTS } from '@dadei/ui/lib/workspace/api/http/constants';
-import { formatCommandStreamError, getUserErrorMessage, parseHttpResponseBody } from '@dadei/ui/lib/platform/errors/userMessage';
-import { getRealtimeSessionToken } from '@dadei/ui/lib/assistant/realtime/realtimeClient';
-import type { CommandMode } from '@dadei/ui/types/command.types';
+import { API_BASE_URL } from '@chello/ui/lib/workspace/api/http/client';
+import { ENDPOINTS } from '@chello/ui/lib/workspace/api/http/constants';
+import { formatCommandStreamError, getUserErrorMessage, parseHttpResponseBody } from '@chello/ui/lib/platform/errors/userMessage';
+import { getRealtimeSessionToken } from '@chello/ui/lib/assistant/realtime/realtimeClient';
+import type { CommandMode } from '@chello/ui/types/command.types';
 
-export type { CommandMode as CommandStreamMode } from '@dadei/ui/types/command.types';
+export type { CommandMode as CommandStreamMode } from '@chello/ui/types/command.types';
 
 export type CommandSSEEvent =
   | { type: 'transcript'; text: string }

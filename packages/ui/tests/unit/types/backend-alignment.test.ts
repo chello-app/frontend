@@ -3,8 +3,8 @@ import {
   COMMAND_MODES,
   ENROLLMENT_KICKOFF_TEXT,
   type CommandMode,
-} from '@dadei/ui/types/command.types';
-import type { ServiceModeClaim } from '@dadei/ui/types/service.types';
+} from '@chello/ui/types/command.types';
+import type { ServiceModeClaim } from '@chello/ui/types/service.types';
 
 /** Backend CommandMode literal set (enrollment.py). */
 const BACKEND_COMMAND_MODES = ['normal', 'introduction', 'retraining'] as const;
@@ -28,7 +28,7 @@ describe('backend type alignment', () => {
   });
 
   it('enrollment kickoff token matches backend ENROLLMENT_KICKOFF', () => {
-    expect(ENROLLMENT_KICKOFF_TEXT).toBe('__dadei_enrollment_kickoff__');
+    expect(ENROLLMENT_KICKOFF_TEXT).toBe('__chello_enrollment_kickoff__');
   });
 
   it('ServiceModeClaim matches backend command-mode claim response fields', () => {

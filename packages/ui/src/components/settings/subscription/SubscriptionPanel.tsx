@@ -13,18 +13,18 @@ import {
   SettingsBento,
   settingsButtonClass,
   type SettingsPanelProps,
-} from '@dadei/ui/components/settings/layout';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import { subscriptionApi } from '@dadei/ui/lib/workspace/api/subscription';
+} from '@chello/ui/components/settings/layout';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import { subscriptionApi } from '@chello/ui/lib/workspace/api/subscription';
 import {
   invalidateSubscription,
   useSubscription,
-} from '@dadei/ui/lib/platform/query/queryHooks';
-import { formatForUser } from '@dadei/ui/lib/platform/shared/time';
-import { getUserErrorMessage } from '@dadei/ui/lib/platform/errors/userMessage';
-import type { SubscriptionLimitsView } from '@dadei/ui/types/subscription.types';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+} from '@chello/ui/lib/platform/query/queryHooks';
+import { formatForUser } from '@chello/ui/lib/platform/shared/time';
+import { getUserErrorMessage } from '@chello/ui/lib/platform/errors/userMessage';
+import type { SubscriptionLimitsView } from '@chello/ui/types/subscription.types';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 function formatPeriodEnd(iso: string | null | undefined, timeZone: string): string | null {
   if (!iso) return null;
@@ -77,7 +77,7 @@ const PRO_BENEFITS: Benefit[] = [
   {
     Icon: InfinityIcon,
     title: 'Unlimited commands',
-    desc: 'Talk to Dadei as much as you want — no daily cap.',
+    desc: 'Talk to Chello as much as you want — no daily cap.',
   },
   {
     Icon: Smartphone,
@@ -87,7 +87,7 @@ const PRO_BENEFITS: Benefit[] = [
   {
     Icon: Users,
     title: 'Everyone you know',
-    desc: 'Dadei remembers every person, with no limit.',
+    desc: 'Chello remembers every person, with no limit.',
   },
 ];
 
@@ -267,7 +267,7 @@ export function SubscriptionPanel({ pendingAction, onActionConsumed }: SettingsP
             </div>
             <h2 className="mt-5 font-display text-2xl text-zinc-50">You&rsquo;re on Pro</h2>
             <p className="mt-2 text-sm leading-relaxed text-zinc-400 font-secondary">
-              Every limit lifted. Dadei is fully present &mdash; on every device, for everyone you know.
+              Every limit lifted. Chello is fully present &mdash; on every device, for everyone you know.
             </p>
             <button
               type="button"
@@ -290,7 +290,7 @@ export function SubscriptionPanel({ pendingAction, onActionConsumed }: SettingsP
               <div>
                 <span className="inline-flex items-center gap-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-emerald-300/90">
                   <Sparkles className="h-3.5 w-3.5" aria-hidden />
-                  Dadei Pro
+                  Chello Pro
                 </span>
                 <h2 className="mt-2 font-display text-3xl leading-tight text-zinc-50">
                   Everything, without limits.

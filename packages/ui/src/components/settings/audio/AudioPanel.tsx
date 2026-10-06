@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import type { Modifier } from '@dadei/ui/types/electron';
-import { useMicLevelPreview } from '@dadei/ui/contexts/AudioContext';
-import { useTutorialSettingsTourActive } from '@dadei/ui/contexts/TutorialContext';
-import { GridTile, SettingsGrid4 } from '@dadei/ui/components/settings/layout';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import type { Modifier } from '@chello/ui/types/electron';
+import { useMicLevelPreview } from '@chello/ui/contexts/AudioContext';
+import { useTutorialSettingsTourActive } from '@chello/ui/contexts/TutorialContext';
+import { GridTile, SettingsGrid4 } from '@chello/ui/components/settings/layout';
 import {
   NoiseSuppressionControl,
   PowerToggleButton,
-} from '@dadei/ui/components/settings/controls';
+} from '@chello/ui/components/settings/controls';
 import { AssistantHotkeyControl } from './AssistantHotkeyControl';
 import { MicDeviceList } from './MicDeviceList';
 import { MicLevelMeter } from './MicLevelMeter';

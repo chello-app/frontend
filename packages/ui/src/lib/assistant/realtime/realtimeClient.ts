@@ -1,6 +1,6 @@
-import { buildRealtimeWebSocketUrl } from '@dadei/ui/lib/workspace/api/http/realtime';
-import { dispatchClientAction } from '@dadei/ui/lib/assistant/realtime/clientActionHandler';
-import { HEARTBEAT_INTERVAL_MS, HEARTBEAT_TIMEOUT_MS } from '@dadei/ui/lib/assistant/realtime/constants';
+import { buildRealtimeWebSocketUrl } from '@chello/ui/lib/workspace/api/http/realtime';
+import { dispatchClientAction } from '@chello/ui/lib/assistant/realtime/clientActionHandler';
+import { HEARTBEAT_INTERVAL_MS, HEARTBEAT_TIMEOUT_MS } from '@chello/ui/lib/assistant/realtime/constants';
 
 export type RealtimeMessage = Record<string, unknown> & {
   event?: string;

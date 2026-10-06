@@ -1,13 +1,13 @@
 import { useContext, useEffect, useLayoutEffect, useRef, useState, useCallback, Fragment, type CSSProperties } from 'react';
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from 'framer-motion';
-import type { AssistantBubbleStatus } from '@dadei/ui/contexts/CommandContext';
-import { useCommand } from '@dadei/ui/contexts/CommandContext';
-import { AudioContext } from '@dadei/ui/contexts/AudioContext';
-import { formatAssistantStatusLine } from '@dadei/ui/lib/assistant/voice/command/commandToolLabels';
+import type { AssistantBubbleStatus } from '@chello/ui/contexts/CommandContext';
+import { useCommand } from '@chello/ui/contexts/CommandContext';
+import { AudioContext } from '@chello/ui/contexts/AudioContext';
+import { formatAssistantStatusLine } from '@chello/ui/lib/assistant/voice/command/commandToolLabels';
 import {
   typewriterDelayBeforeChar,
   typewriterRevealStep,
-} from '@dadei/ui/lib/assistant/voice/ui/typewriterTiming';
+} from '@chello/ui/lib/assistant/voice/ui/typewriterTiming';
 import {
   BUBBLE_LAYOUT_TRANSITION,
   BUBBLE_PRESENCE_TRANSITION,
@@ -39,15 +39,15 @@ import {
   shouldShowLiveUserBubble,
   userBubblePhase,
   userBubblePlacement,
-} from '@dadei/ui/lib/assistant/voice/ui/commandBubbleMotion';
-import { VOICE_EASE } from '@dadei/ui/lib/assistant/voice/constants';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
-import type { CommandState } from '@dadei/ui/types/command.types';
+} from '@chello/ui/lib/assistant/voice/ui/commandBubbleMotion';
+import { VOICE_EASE } from '@chello/ui/lib/assistant/voice/constants';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
+import type { CommandState } from '@chello/ui/types/command.types';
 
 const STATUS_ELLIPSIS_CYCLE_MS = 480;
 const BUBBLE_BODY_CLASS = 'font-primary text-[15px] leading-[1.6] sm:text-[16px]';
 const BUBBLE_BODY_MIN_H = 'min-h-[1.6rem]';
-/** Shared speaker line — one family/size so dadei and user labels read as a pair. */
+/** Shared speaker line — one family/size so chello and user labels read as a pair. */
 const SPEAKER_MARK_CLASS =
   'font-primary text-[11px] font-medium leading-none tracking-[0.12em] lowercase';
 /** Command-mode dock chrome — aligned with MicrophoneButton MIC_GLASS.blue */
@@ -195,7 +195,7 @@ function SpeakerMark({
         </span>
       ) : null}
       {isAssistant ? (
-        <span className={cn(SPEAKER_MARK_CLASS, 'text-zinc-300')}>dadei</span>
+        <span className={cn(SPEAKER_MARK_CLASS, 'text-zinc-300')}>chello</span>
       ) : (
         <span className={cn(SPEAKER_MARK_CLASS, 'text-zinc-500')}>{userLabel}</span>
       )}

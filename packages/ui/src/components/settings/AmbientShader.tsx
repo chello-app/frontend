@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 const shadersImport = () => import('@paper-design/shaders-react');
 

@@ -1,14 +1,14 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import InteractionCard from '@dadei/ui/components/interaction-panel/InteractionCard';
+import InteractionCard from '@chello/ui/components/interaction-panel/InteractionCard';
 import { sampleInteraction } from '../../support/fixtures/interactions';
 
-vi.mock('@dadei/ui/contexts/TutorialContext', () => ({
+vi.mock('@chello/ui/contexts/TutorialContext', () => ({
   useTutorialTargetInteractive: () => true,
 }));
 
-vi.mock('@dadei/ui/lib/platform/hooks/useMobileAssistant', () => ({
+vi.mock('@chello/ui/lib/platform/hooks/useMobileAssistant', () => ({
   useMobileAssistant: () => false,
 }));
 

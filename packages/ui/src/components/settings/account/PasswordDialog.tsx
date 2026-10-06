@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import * as Dialog from '@radix-ui/react-dialog';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
-import { getUserErrorMessage } from '@dadei/ui/lib/platform/errors/userMessage';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
+import { getUserErrorMessage } from '@chello/ui/lib/platform/errors/userMessage';
 import {
   useChangePasswordMutation,
   useSetPasswordMutation,
-} from '@dadei/ui/lib/platform/query/queryHooks';
+} from '@chello/ui/lib/platform/query/queryHooks';
 import {
   settingsInputClass,
   settingsPrimaryButtonClass,
-} from '@dadei/ui/components/settings/layout';
-import { veilEase } from '@dadei/ui/lib/platform/shared/motion';
+} from '@chello/ui/components/settings/layout';
+import { veilEase } from '@chello/ui/lib/platform/shared/motion';
 
 export type PasswordDialogMode = 'set' | 'change';
 

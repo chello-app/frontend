@@ -1,6 +1,6 @@
-import type { Conversation, Interaction, Person } from '@dadei/ui/types/models.types';
-import { parseApiDateTime } from '@dadei/ui/lib/platform/shared/parseApiDateTime';
-import { formatForUser } from '@dadei/ui/lib/platform/shared/time';
+import type { Conversation, Interaction, Person } from '@chello/ui/types/models.types';
+import { parseApiDateTime } from '@chello/ui/lib/platform/shared/parseApiDateTime';
+import { formatForUser } from '@chello/ui/lib/platform/shared/time';
 
 export const TUTORIAL_TEST_PERSON_ID = 'tutorial-test-person';
 export const TUTORIAL_TEST_CONVERSATION_ID = 'tutorial-test-conversation';
@@ -40,7 +40,7 @@ export function buildTutorialFixtures(anchorIso: string): TutorialFixtures {
   return {
     person: {
       id: TUTORIAL_TEST_PERSON_ID,
-      name: 'dadei',
+      name: 'chello',
       is_user: false,
       network_id: 'tutorial',
       created_at: anchorIso,
@@ -49,14 +49,14 @@ export function buildTutorialFixtures(anchorIso: string): TutorialFixtures {
     conversation: {
       id: TUTORIAL_TEST_CONVERSATION_ID,
       started_at: anchorIso,
-      topic_summary: 'Getting started with dadei',
+      topic_summary: 'Getting started with chello',
       context_summary: `Sample conversation from ${whenLabel}. Interactions like these are grouped together so you can review what happened at a glance.`,
       is_active: false,
     },
     interactions: [
       {
         id: 'tutorial-test-interaction-1',
-        text: 'Hey, this is dadei.',
+        text: 'Hey, this is chello.',
         timestamp: isoAt(anchorIso, 30_000),
         network_id: 'tutorial',
         person_id: TUTORIAL_TEST_PERSON_ID,

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   permissionIdsForClient,
   permissionsForPlatform,
-} from '@dadei/ui/lib/onboarding/tutorial/permissionsRegistry';
+} from '@chello/ui/lib/onboarding/tutorial/permissionsRegistry';
 
 describe('permissionIdsForClient', () => {
   it('includes base capabilities on web', () => {

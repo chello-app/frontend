@@ -1,8 +1,8 @@
-# Dadei Frontend
+# Chello Frontend
 
 ## Overview
 
-Dadei Frontend is an npm workspaces monorepo that ships two production surfaces for the same product: a **browser SPA** and an **Electron desktop** client. Both share a **typed React UI layer** and API/realtime conventions, so product behavior stays consistent while each runtime handles its own constraints (tabs vs. native audio, OS keychain, installers).
+Chello Frontend is an npm workspaces monorepo that ships two production surfaces for the same product: a **browser SPA** and an **Electron desktop** client. Both share a **typed React UI layer** and API/realtime conventions, so product behavior stays consistent while each runtime handles its own constraints (tabs vs. native audio, OS keychain, installers).
 
 ## Why This Is Hard
 
@@ -14,13 +14,13 @@ Dadei Frontend is an npm workspaces monorepo that ships two production surfaces 
 
 ## Architecture Highlights
 
-- **Monorepo layout:** `apps/website` (Vite + React), `apps/desktop` (Electron + Vite renderer), and `packages/ui` (`@dadei/ui`) for shared components and client plumbing.
+- **Monorepo layout:** `apps/website` (Vite + React), `apps/desktop` (Electron + Vite renderer), and `packages/ui` (`@chello/ui`) for shared components and client plumbing.
 - **Layered React apps:** contexts and services orchestrate auth, API access, audio/realtime, and notifications so screens stay composable as the product grows.
 - **HTTP + WebSockets:** a shared mental model of versioned REST (`/api/v1`, `/api/v2` where configured) alongside resilient WebSocket clients (heartbeats, backoff, fan-out to UI).
 - **Electron process model:** main process owns window lifecycle, OAuth handoff, updates, and compatibility checks; preload exposes a narrow IPC surface; renderer stays a standard React app with `contextIsolation` and without broad Node exposure.
 - **Desktop-specific concerns:** OS-backed secret storage for credentials, optional auto-update flow, and packaging via **electron-builder** with CI producing Windows and macOS artifacts.
 
-## `@dadei/ui` library layout
+## `@chello/ui` library layout
 
 Domain logic lives under `packages/ui/src/lib/` in four vertical groups (mirroring the backend `app/lib/` structure):
 
@@ -33,7 +33,7 @@ Domain logic lives under `packages/ui/src/lib/` in four vertical groups (mirrori
 
 Command, service, and assistant state types live under `packages/ui/src/types/` (`command.types.ts`, `service.types.ts`, `assistant.types.ts`).
 
-React contexts and components import from these modules via `@dadei/ui/lib/...`. Constants live in per-subdomain `constants.ts` files where values are shared or tunable.
+React contexts and components import from these modules via `@chello/ui/lib/...`. Constants live in per-subdomain `constants.ts` files where values are shared or tunable.
 
 ## Testing
 
@@ -55,15 +55,15 @@ For errors and user messages, assert that a message was **emitted** (non-empty, 
 - **CI** runs the full suite plus TypeScript typecheck on every PR.
 
 ```bash
-npm run test --workspace=@dadei/ui
-npm run test:unit --workspace=@dadei/ui
-npm run test:integration --workspace=@dadei/ui
-npm run typecheck --workspace=@dadei/ui
+npm run test --workspace=@chello/ui
+npm run test:unit --workspace=@chello/ui
+npm run test:integration --workspace=@chello/ui
+npm run typecheck --workspace=@chello/ui
 ```
 
 ## Voice and Audio
 
-All voice behavior lives in `@dadei/ui` and is identical in the website and desktop renderer. There are **no per-app `public/` folders** for audio assets — models and runtime wiring are centralized so nothing is duplicated between apps.
+All voice behavior lives in `@chello/ui` and is identical in the website and desktop renderer. There are **no per-app `public/` folders** for audio assets — models and runtime wiring are centralized so nothing is duplicated between apps.
 
 ### Wake-word detection (on-device)
 
@@ -73,7 +73,7 @@ Local wake-word detection uses the [openWakeWord](https://github.com/dscripka/op
 - **Models:** `packages/ui/src/lib/assistant/audio/models/` (bundled by Vite with `?url` imports)
   - `melspectrogram.onnx` — mel feature extractor
   - `embedding_model.onnx` — embedding network
-  - `hey_dadei.onnx` — wake classifier for "Dadei"
+  - `hey_chello.onnx` — wake classifier for "Chello"
   - `hey_jarvis.onnx` — wake classifier for "Jarvis"
 - **ORT WASM:** loaded from jsDelivr CDN (`onnxruntime-web@1.26.0`), not self-hosted in the repo
 - **Behavior:** runs on the mic stream in parallel with command capture; on detection it transitions to `listening` — transcription is **WebSocket-only** on the server
@@ -90,16 +90,16 @@ After wake (or manual start), PCM16 chunks stream to the backend over the realti
 
 ### Transcript wake-word fallback
 
-Server-side ASR can also recognize spoken wake phrases. `packages/ui/src/lib/assistant/voice/command/wakeWordDetection.ts` normalizes transcripts (handles “Dadei” spelling variants, “Assistant”, “Jarvis”, leading disfluencies) and strips wake tokens from submitted command text.
+Server-side ASR can also recognize spoken wake phrases. `packages/ui/src/lib/assistant/voice/command/wakeWordDetection.ts` normalizes transcripts (handles “Chello” spelling variants, “Assistant”, “Jarvis”, leading disfluencies) and strips wake tokens from submitted command text.
 
 ### Removed: client-side Silero VAD
 
-The old setup copied Silero VAD worklets, VAD ONNX models, and self-hosted ORT WASM binaries into each app’s `public/` folder. That duplicated ~35 MB per app and required splitting model files across website and desktop. That approach is gone; all ONNX assets now live once in `@dadei/ui`.
+The old setup copied Silero VAD worklets, VAD ONNX models, and self-hosted ORT WASM binaries into each app’s `public/` folder. That duplicated ~35 MB per app and required splitting model files across website and desktop. That approach is gone; all ONNX assets now live once in `@chello/ui`.
 
 ## Engineering Decisions and Tradeoffs
 
-- **Workspaces over separate repos:** one dependency graph and shared `@dadei/ui` package; slightly more discipline on boundaries, much less copy-paste across web and desktop.
-- **Shared audio assets in `@dadei/ui`:** wake models ship with the UI package and Vite bundles them for both apps — no per-app `public/` copies.
+- **Workspaces over separate repos:** one dependency graph and shared `@chello/ui` package; slightly more discipline on boundaries, much less copy-paste across web and desktop.
+- **Shared audio assets in `@chello/ui`:** wake models ship with the UI package and Vite bundles them for both apps — no per-app `public/` copies.
 - **CDN-hosted ORT WASM:** avoids checking in large WASM binaries; tradeoff is a runtime dependency on jsDelivr (same version pin as `onnxruntime-web` in `packages/ui`).
 - **RMS over neural VAD for utterance boundaries:** simpler and lighter than Silero; server transcription handles the heavy lifting once capture starts.
 - **Security over convenience in Electron:** explicit IPC instead of giving the renderer full Node reduces risk and keeps the attack surface reviewable.
@@ -118,7 +118,7 @@ The old setup copied Silero VAD worklets, VAD ONNX models, and self-hosted ORT W
 ## Impact
 
 - **Users:** one product experience in the browser or on the desktop, with realtime feedback and navigable history after live sessions.
-- **The team:** a single frontend codebase can evolve features once in `@dadei/ui` or shared client code and land in both clients.
+- **The team:** a single frontend codebase can evolve features once in `@chello/ui` or shared client code and land in both clients.
 - **Hiring signal:** this repo demonstrates full-stack *client* ownership—SPA architecture, realtime systems, Electron hardening, and release engineering—not only component-level UI work.
 
 ## Minimal Development Notes
@@ -134,7 +134,7 @@ Create `frontend/.env` at the monorepo root (both apps read it) with at least:
 
 Production builds (`vite build` for the website or desktop renderer) read **`API_URL` from the monorepo root** via `loadEnv` (`.env.production` or environment variables such as on Vercel). The desktop installer workflow writes that root `.env.production` before packaging so the renderer bundle matches the API the Electron main process uses.
 
-Both Vite apps set `assetsInclude: ['**/*.onnx']` so wake-word models imported from `@dadei/ui` are emitted as static assets in the build output.
+Both Vite apps set `assetsInclude: ['**/*.onnx']` so wake-word models imported from `@chello/ui` are emitted as static assets in the build output.
 
 Common commands from the repo root:
 

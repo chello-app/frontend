@@ -1,8 +1,8 @@
-import { ASSISTANT_PATH } from '@dadei/ui/lib/platform/runtime/assistantPaths';
+import { ASSISTANT_PATH } from '@chello/ui/lib/platform/runtime/assistantPaths';
 
-import { authApi } from '@dadei/ui/lib/workspace/api/auth';
+import { authApi } from '@chello/ui/lib/workspace/api/auth';
 
-import { DESKTOP_OAUTH_RETURN_ORIGIN } from '@dadei/ui/lib/platform/auth/desktopOAuth';
+import { DESKTOP_OAUTH_RETURN_ORIGIN } from '@chello/ui/lib/platform/auth/desktopOAuth';
 
 import {
 
@@ -12,7 +12,7 @@ import {
 
   buildWebMicrosoftOAuthLoginUrl,
 
-} from '@dadei/ui/lib/platform/auth/webOAuthUrls';
+} from '@chello/ui/lib/platform/auth/webOAuthUrls';
 
 
 

@@ -2,17 +2,17 @@ import { useState, type RefObject } from 'react';
 
 import { Trash2 } from 'lucide-react';
 
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
-import { useMobileInteractionsSheetOptional } from '@dadei/ui/components/MobileInteractionsSheet';
+import { useMobileInteractionsSheetOptional } from '@chello/ui/components/MobileInteractionsSheet';
 
 import { useInteractionPanel } from './useInteractionPanel';
 
 import ConversationCard from './ConversationCard';
 
-import { useTutorialEngaged } from '@dadei/ui/contexts/TutorialContext';
+import { useTutorialEngaged } from '@chello/ui/contexts/TutorialContext';
 
-import { ToolbarButton } from '@dadei/ui/components/ui/Toolbar';
+import { ToolbarButton } from '@chello/ui/components/ui/Toolbar';
 
 import { ClearAllConfirmDialog } from './ClearAllConfirmDialog';
 
@@ -358,7 +358,7 @@ export default function InteractionPanel({ embedded = false }: { embedded?: bool
 
               <p className="text-xs leading-relaxed text-zinc-500 font-secondary">
 
-                Conversations and interactions captured by dadei
+                Conversations and interactions captured by chello
 
               </p>
 

@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
-import { formatForUser } from '@dadei/ui/lib/platform/shared/time';
-import type { ActionOperation, NetworkAction } from '@dadei/ui/types/models.types';
+import { formatForUser } from '@chello/ui/lib/platform/shared/time';
+import type { ActionOperation, NetworkAction } from '@chello/ui/types/models.types';
 
 /** Domains that surface approval notification banners. */
 export const SIDE_EFFECT_ACTION_TYPES = new Set(['conversation', 'interaction', 'person']);

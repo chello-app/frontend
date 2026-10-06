@@ -2,7 +2,7 @@
 import { useState, useRef, useLayoutEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 /** Above settings shell (250); below settings modals (300). */
 const TOOLTIP_PORTAL_Z = 280;

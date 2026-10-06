@@ -7,7 +7,7 @@ const PLATFORMS = [
   { id: 'linux', label: 'Linux', Icon: Terminal },
 ] as const;
 
-const RELEASE_URL = 'https://github.com/dadei-app/frontend/releases/latest';
+const RELEASE_URL = 'https://github.com/chello-app/frontend/releases/latest';
 
 export default function DesktopMomentum() {
   return (
@@ -34,10 +34,10 @@ export default function DesktopMomentum() {
               desktop first momentum
             </p>
             <h2 className="mt-2 font-primary text-2xl leading-tight text-zinc-50 sm:text-3xl lg:text-4xl">
-              keep dadei close on your desktop.
+              keep chello close on your desktop.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-zinc-300/90 font-secondary sm:text-base">
-              start with desktop if you want dadei one click away — fast capture, reminders, and
+              start with desktop if you want chello one click away — fast capture, reminders, and
               follow-through all day.
             </p>
           </div>

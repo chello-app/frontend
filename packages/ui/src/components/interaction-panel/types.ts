@@ -1,4 +1,4 @@
-import type { Conversation, Interaction } from '@dadei/ui/types/models.types';
+import type { Conversation, Interaction } from '@chello/ui/types/models.types';
 
 export interface ConversationGroupState {
   conversation: Conversation | null;

@@ -8,40 +8,40 @@ import {
   type ReactNode,
 } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
 import {
   useAssistantRuntimeActions,
   useAssistantRuntimeState,
-} from '@dadei/ui/contexts/AssistantRuntimeContext';
-import { selectCommandMode, selectIsCommandOwner, selectIsCommandThinking, selectVoiceEnrollmentActive, selectCanClaimCommandService } from '@dadei/ui/lib/assistant/assistantRuntime';
+} from '@chello/ui/contexts/AssistantRuntimeContext';
+import { selectCommandMode, selectIsCommandOwner, selectIsCommandThinking, selectVoiceEnrollmentActive, selectCanClaimCommandService } from '@chello/ui/lib/assistant/assistantRuntime';
 import {
   markMicIntentHandled,
   runAssistantTransition,
   shouldAcceptMicIntent,
   SERVICE_STATE_SYNC_TIMEOUT_MS,
-} from '@dadei/ui/lib/assistant/lifecycle/assistantLifecycle';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
-import { useService } from '@dadei/ui/contexts/ServiceContext';
+} from '@chello/ui/lib/assistant/lifecycle/assistantLifecycle';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
+import { useService } from '@chello/ui/contexts/ServiceContext';
 import axios from 'axios';
 import {
   isAbortError,
   streamCommandFromText,
   type CommandSSEEvent,
-} from '@dadei/ui/lib/workspace/api/command';
+} from '@chello/ui/lib/workspace/api/command';
 import {
   ENROLLMENT_KICKOFF_TEXT,
   ENROLLMENT_TRANSCRIPT_OPENER,
   type EnrollmentMode,
   type CommandMode,
-} from '@dadei/ui/types/command.types';
-import { serviceApi } from '@dadei/ui/lib/workspace/api/service';
+} from '@chello/ui/types/command.types';
+import { serviceApi } from '@chello/ui/lib/workspace/api/service';
 import {
   getRealtimeSessionId,
   getRealtimeSessionToken,
   sendRealtimeMessage,
   subscribeRealtimeMessages,
-} from '@dadei/ui/lib/assistant/realtime/realtimeClient';
+} from '@chello/ui/lib/assistant/realtime/realtimeClient';
 import {
   ERROR_CODES,
   formatCommandStreamError,
@@ -49,43 +49,43 @@ import {
   formatWsTranscriptError,
   getUserErrorMessage,
   parseApiDetail,
-} from '@dadei/ui/lib/platform/errors/userMessage';
-import { isProposedToolSummary, proposedActionHumanLine } from '@dadei/ui/lib/workspace/display/actionDisplay';
+} from '@chello/ui/lib/platform/errors/userMessage';
+import { isProposedToolSummary, proposedActionHumanLine } from '@chello/ui/lib/workspace/display/actionDisplay';
 import {
   isInstructionalTranscriptBleed,
   sanitizeCommandTranscript,
-} from '@dadei/ui/lib/assistant/voice/command/commandTranscriptSanitize';
+} from '@chello/ui/lib/assistant/voice/command/commandTranscriptSanitize';
 import {
   liveCommandCaptionText,
   submitCommandText,
-} from '@dadei/ui/lib/assistant/voice/command/commandCaption';
-import { normalizeVisibleCommandText, transcriptStartsWithWakeCommand } from '@dadei/ui/lib/assistant/voice/command/wakeWordDetection';
+} from '@chello/ui/lib/assistant/voice/command/commandCaption';
+import { normalizeVisibleCommandText, transcriptStartsWithWakeCommand } from '@chello/ui/lib/assistant/voice/command/wakeWordDetection';
 import {
   CLAIM_HOLD_SECONDS,
   CLAIM_RENEW_BEFORE_EXPIRE_MS,
   computeFollowUpMs,
-} from '@dadei/ui/lib/assistant/voice/constants';
+} from '@chello/ui/lib/assistant/voice/constants';
 import {
   commandToolStatusLabel,
   formatAssistantStatusLine,
-} from '@dadei/ui/lib/assistant/voice/command/commandToolLabels';
-import { isSessionEndUtterance } from '@dadei/ui/lib/assistant/voice/session/sessionEndDetection';
+} from '@chello/ui/lib/assistant/voice/command/commandToolLabels';
+import { isSessionEndUtterance } from '@chello/ui/lib/assistant/voice/session/sessionEndDetection';
 import {
   notifyCommandCaptureRearm,
   subscribeVoiceSpeechActivity,
-} from '@dadei/ui/lib/assistant/voice/session/voiceSessionActivity';
-import { CommandBubbleStack } from '@dadei/ui/components/command/CommandBubble';
-import { formatForUser } from '@dadei/ui/lib/platform/shared/time';
+} from '@chello/ui/lib/assistant/voice/session/voiceSessionActivity';
+import { CommandBubbleStack } from '@chello/ui/components/command/CommandBubble';
+import { formatForUser } from '@chello/ui/lib/platform/shared/time';
 import { motion } from 'framer-motion';
-import { VOICE_EASE } from '@dadei/ui/lib/assistant/voice/constants';
-import { DOCK_POP_LEAD_MS } from '@dadei/ui/lib/assistant/voice/ui/commandBubbleMotion';
-import { estimateTypewriterRemainingMs } from '@dadei/ui/lib/assistant/voice/ui/typewriterTiming';
+import { VOICE_EASE } from '@chello/ui/lib/assistant/voice/constants';
+import { DOCK_POP_LEAD_MS } from '@chello/ui/lib/assistant/voice/ui/commandBubbleMotion';
+import { estimateTypewriterRemainingMs } from '@chello/ui/lib/assistant/voice/ui/typewriterTiming';
 
 const ASSISTANT_STATUS_THINKING = 'Thinking';
 
-import type { AssistantBubbleStatus, CommandState } from '@dadei/ui/types/command.types';
+import type { AssistantBubbleStatus, CommandState } from '@chello/ui/types/command.types';
 
-export type { AssistantBubbleStatus, CommandState } from '@dadei/ui/types/command.types';
+export type { AssistantBubbleStatus, CommandState } from '@chello/ui/types/command.types';
 
 export interface CommandTurnHistory {
   id: string;

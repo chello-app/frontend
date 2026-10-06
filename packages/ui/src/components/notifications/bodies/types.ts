@@ -1,4 +1,4 @@
-import type { ActionOperation } from '@dadei/ui/types/models.types';
+import type { ActionOperation } from '@chello/ui/types/models.types';
 
 export type BannerContentProps = {
   actionType: string;

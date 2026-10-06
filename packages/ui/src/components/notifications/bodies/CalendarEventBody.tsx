@@ -1,4 +1,4 @@
-import { formatActionTimeRange } from '@dadei/ui/lib/workspace/display/actionDisplay';
+import { formatActionTimeRange } from '@chello/ui/lib/workspace/display/actionDisplay';
 import type { CalendarEventBodyProps } from './types';
 import { eventDateParts, eventTimeLabel, strArg } from './shared';
 

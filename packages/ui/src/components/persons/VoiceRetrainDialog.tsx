@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import * as Dialog from '@radix-ui/react-dialog';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
-import { getUserErrorMessage } from '@dadei/ui/lib/platform/errors/userMessage';
-import { encodeFloat32ToWav } from '@dadei/ui/lib/assistant/audio/encodeWav';
-import { veilEase } from '@dadei/ui/lib/platform/shared/motion';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
+import { getUserErrorMessage } from '@chello/ui/lib/platform/errors/userMessage';
+import { encodeFloat32ToWav } from '@chello/ui/lib/assistant/audio/encodeWav';
+import { veilEase } from '@chello/ui/lib/platform/shared/motion';
 import {
   settingsInputClass,
   settingsPrimaryButtonClass,
-} from '@dadei/ui/components/settings/layout';
+} from '@chello/ui/components/settings/layout';
 
 const SAMPLE_RATE = 16000;
 const MIN_RECORD_SECONDS = 5;

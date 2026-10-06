@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { Trash2 } from 'lucide-react';
 import { useQueryClient } from '@tanstack/react-query';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
-import { authApi } from '@dadei/ui/lib/workspace/api/auth';
-import { triggerProviderOAuth } from '@dadei/ui/lib/platform/auth/providerAuth';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
-import { getUserErrorMessage } from '@dadei/ui/lib/platform/errors/userMessage';
-import { settingsReturnPath } from '@dadei/ui/lib/platform/runtime/assistantPaths';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
-import { useMobileAssistant } from '@dadei/ui/lib/platform/hooks/useMobileAssistant';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
+import { authApi } from '@chello/ui/lib/workspace/api/auth';
+import { triggerProviderOAuth } from '@chello/ui/lib/platform/auth/providerAuth';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
+import { getUserErrorMessage } from '@chello/ui/lib/platform/errors/userMessage';
+import { settingsReturnPath } from '@chello/ui/lib/platform/runtime/assistantPaths';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
+import { useMobileAssistant } from '@chello/ui/lib/platform/hooks/useMobileAssistant';
 import {
   GridTile,
   SettingsGrid4,
@@ -18,13 +18,13 @@ import {
   settingsPrimaryButtonClass,
   settingsReadonlyFieldClass,
   type SettingsPanelProps,
-} from '@dadei/ui/components/settings/layout';
-import { SegmentedControl } from '@dadei/ui/components/settings/controls';
-import { useAuthMeQuery } from '@dadei/ui/lib/platform/query/queryHooks';
-import { useTutorialSettingsTourActive } from '@dadei/ui/contexts/TutorialContext';
+} from '@chello/ui/components/settings/layout';
+import { SegmentedControl } from '@chello/ui/components/settings/controls';
+import { useAuthMeQuery } from '@chello/ui/lib/platform/query/queryHooks';
+import { useTutorialSettingsTourActive } from '@chello/ui/contexts/TutorialContext';
 import { buildPopularTimezoneOptions } from './timezonePicker';
 import { AccountSessionActions } from './AccountSessionActions';
-import { GlassAlertModal } from '@dadei/ui/components/ui/GlassModal';
+import { GlassAlertModal } from '@chello/ui/components/ui/GlassModal';
 import { PasswordDialog } from './PasswordDialog';
 
 function CenteredField({ children }: { children: ReactNode }) {

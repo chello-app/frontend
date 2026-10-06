@@ -1,5 +1,5 @@
 {
-  "name": "dadei-website",
+  "name": "chello-website",
   "version": "6.2.1",
   "author": {
     "name": "Ankur Desai",
@@ -15,7 +15,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@dadei/ui": "*",
+    "@chello/ui": "*",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^12.23.24",

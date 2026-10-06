@@ -8,7 +8,7 @@ import {
   type Dispatch,
   type ReactNode,
 } from 'react';
-import { assistantRuntimeReducer } from '@dadei/ui/lib/assistant/assistantRuntime';
+import { assistantRuntimeReducer } from '@chello/ui/lib/assistant/assistantRuntime';
 import {
   applyAssistantStateSnapshot,
   beginServiceStateSyncPending,
@@ -17,13 +17,13 @@ import {
   runServiceStateMutation,
   waitForServiceStateRevisionAfter,
   type AssistantStateSnapshot,
-} from '@dadei/ui/lib/assistant/lifecycle/assistantLifecycle';
+} from '@chello/ui/lib/assistant/lifecycle/assistantLifecycle';
 import {
   INITIAL_ASSISTANT_STATE,
   type AssistantAction,
   type AssistantState,
-} from '@dadei/ui/types/assistant.types';
-import type { CommandMode, CommandState } from '@dadei/ui/types/command.types';
+} from '@chello/ui/types/assistant.types';
+import type { CommandMode, CommandState } from '@chello/ui/types/command.types';
 
 interface AssistantRuntimeContextValue {
   state: AssistantState;

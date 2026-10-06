@@ -8,63 +8,63 @@ import {
   useState,
 } from 'react';
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
 import {
   useAssistantRuntimeActions,
   useAssistantRuntimeState,
   useApplyAuthoritativeAssistantState,
-} from '@dadei/ui/contexts/AssistantRuntimeContext';
+} from '@chello/ui/contexts/AssistantRuntimeContext';
 import {
   selectIsAmbientEnabled,
   selectIsCommandService,
   selectIsCommandOwner,
   selectIsMicSyncPending,
   selectIsServiceStateSyncPending,
-} from '@dadei/ui/lib/assistant/assistantRuntime';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import { parseInteractionDate } from '@dadei/ui/components/interaction-panel/conversationUtils';
-import { getUserErrorMessage, ERROR_CODES } from '@dadei/ui/lib/platform/errors/userMessage';
-import { actionsApi } from '@dadei/ui/lib/workspace/api/actions';
-import { memoriesApi } from '@dadei/ui/lib/workspace/api/memories';
-import { personsApi } from '@dadei/ui/lib/workspace/api/persons';
-import { conversationsApi } from '@dadei/ui/lib/workspace/api/conversations';
-import { interactionsApi } from '@dadei/ui/lib/workspace/api/interactions';
-import { serviceApi } from '@dadei/ui/lib/workspace/api/service';
+} from '@chello/ui/lib/assistant/assistantRuntime';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import { parseInteractionDate } from '@chello/ui/components/interaction-panel/conversationUtils';
+import { getUserErrorMessage, ERROR_CODES } from '@chello/ui/lib/platform/errors/userMessage';
+import { actionsApi } from '@chello/ui/lib/workspace/api/actions';
+import { memoriesApi } from '@chello/ui/lib/workspace/api/memories';
+import { personsApi } from '@chello/ui/lib/workspace/api/persons';
+import { conversationsApi } from '@chello/ui/lib/workspace/api/conversations';
+import { interactionsApi } from '@chello/ui/lib/workspace/api/interactions';
+import { serviceApi } from '@chello/ui/lib/workspace/api/service';
 import {
   parseAssistantStateWireMessage,
   runAssistantTransition,
   type AssistantStateSnapshot,
-} from '@dadei/ui/lib/assistant/lifecycle/assistantLifecycle';
+} from '@chello/ui/lib/assistant/lifecycle/assistantLifecycle';
 import {
   startRealtimeClient,
   stopRealtimeClient,
   subscribeRealtimeMessages,
-} from '@dadei/ui/lib/assistant/realtime/realtimeClient';
-import { getRealtimeSessionId } from '@dadei/ui/lib/assistant/realtime/realtimeClient';
+} from '@chello/ui/lib/assistant/realtime/realtimeClient';
+import { getRealtimeSessionId } from '@chello/ui/lib/assistant/realtime/realtimeClient';
 import {
   clearAssistantSessionCaches,
   removePersonFromCaches,
-} from '@dadei/ui/lib/platform/query/cacheUtils';
+} from '@chello/ui/lib/platform/query/cacheUtils';
 import {
   ASSISTANT_MEMORIES_LIST_LIMIT,
   conversationQueryOptions,
   INTERACTION_PANEL_RECENT_LIMIT,
   useAuthMeQuery,
-} from '@dadei/ui/lib/platform/query/queryHooks';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
+} from '@chello/ui/lib/platform/query/queryHooks';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
 import {
   areRequiredPermissionsGranted,
   hasMissingClientPermissions,
   toTutorialPlatform,
-} from '@dadei/ui/lib/onboarding/tutorial/permissionsRegistry';
+} from '@chello/ui/lib/onboarding/tutorial/permissionsRegistry';
 import type {
   Conversation,
   EpisodicMemory,
   Interaction,
   NetworkAction,
   Person,
-} from '@dadei/ui/types/models.types';
+} from '@chello/ui/types/models.types';
 
 function isNetworkAction(data: unknown): data is NetworkAction {
   if (!data || typeof data !== 'object') return false;

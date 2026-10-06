@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Loader2, ShieldCheck } from 'lucide-react';
-import { logoUrl } from '@dadei/ui/assets/brand';
-import { useAuth } from '@dadei/ui/contexts/AuthContext';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import { authApi } from '@dadei/ui/lib/workspace/api/auth';
-import { TERMS_VERSION } from '@dadei/ui/lib/platform/legal/constants';
-import { getUserErrorMessage } from '@dadei/ui/lib/platform/errors/userMessage';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { logoUrl } from '@chello/ui/assets/brand';
+import { useAuth } from '@chello/ui/contexts/AuthContext';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import { authApi } from '@chello/ui/lib/workspace/api/auth';
+import { TERMS_VERSION } from '@chello/ui/lib/platform/legal/constants';
+import { getUserErrorMessage } from '@chello/ui/lib/platform/errors/userMessage';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 export default function ConsentGateScreen() {
   const { refreshUser } = useAuth();
@@ -61,14 +61,14 @@ export default function ConsentGateScreen() {
               className="h-10 w-10 shrink-0 rounded-lg"
               aria-hidden
             />
-            <span className="font-brand text-2xl tracking-[0.2em] text-zinc-100">dadei</span>
+            <span className="font-brand text-2xl tracking-[0.2em] text-zinc-100">chello</span>
           </div>
           <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10">
             <ShieldCheck className="h-5 w-5 text-emerald-400" aria-hidden />
           </div>
           <h1 className="font-primary text-xl font-semibold text-zinc-50">Before you continue</h1>
           <p className="mt-2 font-secondary text-sm text-zinc-400">
-            Review and accept our terms and biometric voice processing policy to use dadei.
+            Review and accept our terms and biometric voice processing policy to use chello.
           </p>
         </div>
 

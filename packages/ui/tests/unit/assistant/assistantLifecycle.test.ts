@@ -6,8 +6,8 @@ import {
   resetAssistantLifecycle,
   shouldAcceptMicIntent,
   waitForServiceStateRevisionAfter,
-} from '@dadei/ui/lib/assistant/lifecycle/assistantLifecycle';
-import { INITIAL_ASSISTANT_STATE } from '@dadei/ui/types/assistant.types';
+} from '@chello/ui/lib/assistant/lifecycle/assistantLifecycle';
+import { INITIAL_ASSISTANT_STATE } from '@chello/ui/types/assistant.types';
 
 describe('assistantLifecycle', () => {
   it('parses assistant_state websocket payloads', () => {

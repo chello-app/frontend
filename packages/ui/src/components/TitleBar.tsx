@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
-import { DESKTOP_TITLEBAR_ATTR, useSystem } from '@dadei/ui/contexts/SystemContext';
-import { DESKTOP_TITLEBAR_STRIP_HEIGHT_CSS } from '@dadei/ui/lib/platform/runtime/electronWindowChrome';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
+import { DESKTOP_TITLEBAR_ATTR, useSystem } from '@chello/ui/contexts/SystemContext';
+import { DESKTOP_TITLEBAR_STRIP_HEIGHT_CSS } from '@chello/ui/lib/platform/runtime/electronWindowChrome';
 
 /**
  * Draggable title-bar region only (Electron custom-title-bar tutorial / WCO pattern).
@@ -33,7 +33,7 @@ export function TitleBar() {
           isMac ? 'text-sm leading-none' : 'text-base',
         )}
       >
-        dadei
+        chello
       </span>
     </header>
   );

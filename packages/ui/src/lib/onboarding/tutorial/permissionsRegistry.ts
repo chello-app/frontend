@@ -3,8 +3,8 @@ import {
   checkRendererPermission,
   requestElectronMicrophonePermission,
   requestRendererPermission,
-} from '@dadei/ui/lib/platform/runtime/desktopPermissions';
-import type { TutorialPlatform } from '@dadei/ui/types/tutorial.types';
+} from '@chello/ui/lib/platform/runtime/desktopPermissions';
+import type { TutorialPlatform } from '@chello/ui/types/tutorial.types';
 
 type CheckFn = () => Promise<'granted' | 'denied' | 'unknown'>;
 type RequestFn = () => Promise<'granted' | 'denied'>;
@@ -112,7 +112,7 @@ export function buildPermissionEntries(isElectron: boolean): PermissionEntry[] {
       id: 'notifications',
       platforms: ['desktop-darwin', 'desktop-win32', 'desktop-linux', 'web'],
       label: 'Notifications',
-      description: 'Alerts when dadei needs your attention.',
+      description: 'Alerts when chello needs your attention.',
       check: checkNotifications(isElectron),
       request: requestNotifications(isElectron),
     },
@@ -140,7 +140,7 @@ export function buildPermissionEntries(isElectron: boolean): PermissionEntry[] {
       id: 'automation',
       platforms: ['desktop-darwin'],
       label: 'Automation',
-      description: 'Control other apps when you ask dadei to act.',
+      description: 'Control other apps when you ask chello to act.',
       check: () => checkMacTutorialPermission('automation'),
       request: () => openMacTutorialSettings('automation'),
       settingsDeepLink:

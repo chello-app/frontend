@@ -15,8 +15,8 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@dadei/ui": ["../../../packages/ui/src/index.ts"],
-      "@dadei/ui/*": ["../../../packages/ui/src/*"]
+      "@chello/ui": ["../../../packages/ui/src/index.ts"],
+      "@chello/ui/*": ["../../../packages/ui/src/*"]
     }
   },
   "include": ["src/**/*", "vite.config.ts"]

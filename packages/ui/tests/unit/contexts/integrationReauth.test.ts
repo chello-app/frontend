@@ -1,11 +1,11 @@
 // @vitest-environment happy-dom
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { QueryClient } from '@tanstack/react-query';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
 
 const handlers: Array<(msg: { event: string; data?: unknown }) => void> = [];
 
-vi.mock('@dadei/ui/lib/assistant/realtime/realtimeClient', () => ({
+vi.mock('@chello/ui/lib/assistant/realtime/realtimeClient', () => ({
   subscribeRealtimeMessages: (handler: (msg: { event: string; data?: unknown }) => void) => {
     handlers.push(handler);
     return () => {
@@ -29,7 +29,7 @@ describe('ServiceContext integration_reauth wiring', () => {
       void queryClient.invalidateQueries({ queryKey: queryKeys.authMe });
     }
 
-    const off = (await import('@dadei/ui/lib/assistant/realtime/realtimeClient'))
+    const off = (await import('@chello/ui/lib/assistant/realtime/realtimeClient'))
       .subscribeRealtimeMessages(msg => {
         if (msg.event === 'integration_reauth') {
           handleIntegrationReauth(msg.data);

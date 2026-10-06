@@ -17,7 +17,7 @@ export function ReconnectBanner({
         {providers.length === 1
           ? `Your ${LABEL[providers[0]] ?? providers[0]} connection expired — reconnect to keep that account active.`
           : `Some connections expired (${providers.map(p => LABEL[p] ?? p).join(', ')}) — reconnect to keep them active.`}
-        {' '}Your dadei account and memories are unaffected.
+        {' '}Your chello account and memories are unaffected.
       </p>
       <div className="flex shrink-0 gap-2">
         {providers.map(p => (

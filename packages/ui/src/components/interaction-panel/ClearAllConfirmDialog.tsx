@@ -1,6 +1,6 @@
 import { Trash2 } from 'lucide-react';
 
-import { GlassAlertModal } from '@dadei/ui/components/ui/GlassModal';
+import { GlassAlertModal } from '@chello/ui/components/ui/GlassModal';
 
 type ClearAllConfirmDialogProps = {
   open: boolean;

@@ -2,28 +2,28 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { isAxiosError } from 'axios';
 import { useReducedMotion } from 'framer-motion';
 import { useQueries, useQueryClient } from '@tanstack/react-query';
-import type { Conversation, Interaction } from '@dadei/ui/types/models.types';
-import { interactionsApi } from '@dadei/ui/lib/workspace/api/interactions';
-import { conversationsApi } from '@dadei/ui/lib/workspace/api/conversations';
-import { useService } from '@dadei/ui/contexts/ServiceContext';
-import { useNotifications } from '@dadei/ui/contexts/NotificationContext';
+import type { Conversation, Interaction } from '@chello/ui/types/models.types';
+import { interactionsApi } from '@chello/ui/lib/workspace/api/interactions';
+import { conversationsApi } from '@chello/ui/lib/workspace/api/conversations';
+import { useService } from '@chello/ui/contexts/ServiceContext';
+import { useNotifications } from '@chello/ui/contexts/NotificationContext';
 import {
   conversationQueryOptions,
   INTERACTION_PANEL_RECENT_LIMIT,
   removeAllConversationQueries,
-} from '@dadei/ui/lib/platform/query/queryHooks';
-import { patchInteractionCaches } from '@dadei/ui/lib/platform/query/cacheUtils';
-import { queryKeys } from '@dadei/ui/lib/platform/query/queryKeys';
-import { getUserErrorMessage } from '@dadei/ui/lib/platform/errors/userMessage';
-import { useTutorialContext, useTutorialEngaged } from '@dadei/ui/contexts/TutorialContext';
+} from '@chello/ui/lib/platform/query/queryHooks';
+import { patchInteractionCaches } from '@chello/ui/lib/platform/query/cacheUtils';
+import { queryKeys } from '@chello/ui/lib/platform/query/queryKeys';
+import { getUserErrorMessage } from '@chello/ui/lib/platform/errors/userMessage';
+import { useTutorialContext, useTutorialEngaged } from '@chello/ui/contexts/TutorialContext';
 import {
   TUTORIAL_COLLAPSE_CONVERSATION_STEP_IDS,
   TUTORIAL_FORCE_EXPAND_CONVERSATION_STEP_IDS,
-} from '@dadei/ui/lib/onboarding/tutorial/constants';
+} from '@chello/ui/lib/onboarding/tutorial/constants';
 import {
   isTutorialTestId,
   TUTORIAL_TEST_CONVERSATION_ID,
-} from '@dadei/ui/lib/onboarding/tutorial/fixtures';
+} from '@chello/ui/lib/onboarding/tutorial/fixtures';
 import { ORPHAN_KEY } from './constants';
 
 const PERSON_COLOR_SHADES = [

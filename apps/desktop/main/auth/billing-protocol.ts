@@ -1,14 +1,14 @@
 import { BrowserWindow } from 'electron';
 
-/** Must match backend `DADEI_DESKTOP_BILLING_ORIGIN`. */
-export const DESKTOP_BILLING_RETURN_ORIGIN = 'dadei://billing';
+/** Must match backend `CHELLO_DESKTOP_BILLING_ORIGIN`. */
+export const DESKTOP_BILLING_RETURN_ORIGIN = 'chello://billing';
 
 let getMainWindow: (() => BrowserWindow | null) | null = null;
 
 export function parseBillingReturnUrl(rawUrl: string): { status: string } | null {
   try {
     const parsed = new URL(rawUrl);
-    if (parsed.protocol !== 'dadei:' || parsed.hostname !== 'billing') {
+    if (parsed.protocol !== 'chello:' || parsed.hostname !== 'billing') {
       return null;
     }
     if (!parsed.pathname.endsWith('/return')) {

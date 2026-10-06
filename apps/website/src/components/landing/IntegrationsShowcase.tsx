@@ -4,8 +4,8 @@ import { Link2 } from 'lucide-react';
 import {
   IntegrationLogo,
   PROVIDER_LOGOS,
-} from '@dadei/ui/components/settings/integrations/integrationIcons';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+} from '@chello/ui/components/settings/integrations/integrationIcons';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 import {
   ACCOUNT_FEATURES,
   defaultWorkspaceToolId,

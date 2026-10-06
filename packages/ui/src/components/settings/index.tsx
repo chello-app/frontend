@@ -12,7 +12,7 @@ import {
   X,
   type LucideIcon,
 } from 'lucide-react';
-import { AmbientShader, preloadAmbientShader } from '@dadei/ui/components/settings/AmbientShader';
+import { AmbientShader, preloadAmbientShader } from '@chello/ui/components/settings/AmbientShader';
 import { AboutPanel } from './about/AboutPanel';
 import { AccountPanel } from './account/AccountPanel';
 import { AudioPanel } from './audio/AudioPanel';
@@ -21,12 +21,12 @@ import { MemoriesPanel } from './memories/MemoriesPanel';
 import { StartupPanel } from './startup/StartupPanel';
 import { SubscriptionPanel } from './subscription/SubscriptionPanel';
 import type { SettingsPanelProps } from './layout';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
-import { useSystem } from '@dadei/ui/contexts/SystemContext';
-import SettingsGuide from '@dadei/ui/components/tutorial/SettingsGuide';
-import { useTutorialContext, useTutorialSettingsTourActive } from '@dadei/ui/contexts/TutorialContext';
-import { isSettingsTutorialStep } from '@dadei/ui/lib/onboarding/tutorial/constants';
-import { veilEase } from '@dadei/ui/lib/platform/shared/motion';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
+import { useSystem } from '@chello/ui/contexts/SystemContext';
+import SettingsGuide from '@chello/ui/components/tutorial/SettingsGuide';
+import { useTutorialContext, useTutorialSettingsTourActive } from '@chello/ui/contexts/TutorialContext';
+import { isSettingsTutorialStep } from '@chello/ui/lib/onboarding/tutorial/constants';
+import { veilEase } from '@chello/ui/lib/platform/shared/motion';
 
 type AssistantSettingsModalProps = {
   open: boolean;

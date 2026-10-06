@@ -1,4 +1,4 @@
-import type { Interaction } from '@dadei/ui/types/models.types';
+import type { Interaction } from '@chello/ui/types/models.types';
 
 export function sampleInteraction(overrides: Partial<Interaction> = {}): Interaction {
   return {

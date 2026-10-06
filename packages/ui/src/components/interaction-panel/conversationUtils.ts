@@ -1,6 +1,6 @@
-import type { Conversation, Interaction } from '@dadei/ui/types/models.types';
-import { parseApiDateTime } from '@dadei/ui/lib/platform/shared/parseApiDateTime';
-import { formatForUser } from '@dadei/ui/lib/platform/shared/time';
+import type { Conversation, Interaction } from '@chello/ui/types/models.types';
+import { parseApiDateTime } from '@chello/ui/lib/platform/shared/parseApiDateTime';
+import { formatForUser } from '@chello/ui/lib/platform/shared/time';
 import { ORPHAN_KEY } from './constants';
 import type { ConversationGroupState, ConversationGroupView } from './types';
 

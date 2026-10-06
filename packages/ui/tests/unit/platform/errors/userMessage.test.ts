@@ -5,7 +5,7 @@ import {
   getUserErrorMessage,
   parseApiDetail,
   sanitizeTechnicalMessage,
-} from '@dadei/ui/lib/platform/errors/userMessage';
+} from '@chello/ui/lib/platform/errors/userMessage';
 
 describe('userMessage', () => {
   it('emits a user-facing message for quota errors', () => {

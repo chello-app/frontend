@@ -1,5 +1,5 @@
-import { clampMicLevel } from '@dadei/ui/contexts/AudioContext';
-import { cn } from '@dadei/ui/lib/platform/shared/cn';
+import { clampMicLevel } from '@chello/ui/contexts/AudioContext';
+import { cn } from '@chello/ui/lib/platform/shared/cn';
 
 const SEGMENTS = 40;
 const ZONES = [

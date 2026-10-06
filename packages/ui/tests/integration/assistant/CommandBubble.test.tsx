@@ -1,11 +1,11 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, act } from '@testing-library/react';
-import { CommandBubbleStack } from '@dadei/ui/components/command/CommandBubble';
-import { ASSISTANT_REVEAL_DELAY_MS } from '@dadei/ui/lib/assistant/voice/ui/commandBubbleMotion';
+import { CommandBubbleStack } from '@chello/ui/components/command/CommandBubble';
+import { ASSISTANT_REVEAL_DELAY_MS } from '@chello/ui/lib/assistant/voice/ui/commandBubbleMotion';
 
 const mockUseCommand = vi.fn();
 
-vi.mock('@dadei/ui/contexts/CommandContext', () => ({
+vi.mock('@chello/ui/contexts/CommandContext', () => ({
   useCommand: () => mockUseCommand(),
 }));
 
@@ -16,7 +16,7 @@ describe('CommandBubbleStack', () => {
       state: 'listening',
       bubbleHistory: [],
       liveTurnId: 'turn-1',
-      userBubbleText: 'Dadei, what time is it?',
+      userBubbleText: 'Chello, what time is it?',
       assistantBubbleText: '',
       assistantBubbleStatus: 'pending',
       assistantStatusLine: null,
@@ -34,7 +34,7 @@ describe('CommandBubbleStack', () => {
 
   it('shows the live user caption while listening', () => {
     render(<CommandBubbleStack />);
-    expect(screen.getByText('Dadei, what time is it?')).toBeInTheDocument();
+    expect(screen.getByText('Chello, what time is it?')).toBeInTheDocument();
   });
 
   it('shows assistant status while thinking', async () => {
@@ -81,7 +81,7 @@ describe('CommandBubbleStack', () => {
       vi.advanceTimersByTime(ASSISTANT_REVEAL_DELAY_MS);
     });
     expect(screen.getByText(/Thinking/)).toBeInTheDocument();
-    expect(screen.getAllByText('dadei').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('chello').length).toBeGreaterThan(0);
   });
 
   it('shows assistant response text while responding', () => {
@@ -104,7 +104,7 @@ describe('CommandBubbleStack', () => {
     expect(screen.getByText('Hi there — how can I help?')).toBeInTheDocument();
   });
 
-  it('keeps submitted user text settled in the stack while dadei typewrites', () => {
+  it('keeps submitted user text settled in the stack while chello typewrites', () => {
     mockUseCommand.mockReturnValue({
       state: 'responding',
       bubbleHistory: [],

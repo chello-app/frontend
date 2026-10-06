@@ -1,4 +1,4 @@
-import { api } from '@dadei/ui/lib/workspace/api/http/client';
+import { api } from '@chello/ui/lib/workspace/api/http/client';
 import {
   LoginCredentials,
   RegisterData,
@@ -7,7 +7,7 @@ import {
   UserMe,
   AcceptConsentPayload,
 } from '../../../types/auth.types';
-import { ENDPOINTS } from '@dadei/ui/lib/workspace/api/http/constants';
+import { ENDPOINTS } from '@chello/ui/lib/workspace/api/http/constants';
 
 export const authApi = {
   /**

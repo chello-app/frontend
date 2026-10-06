@@ -1,8 +1,8 @@
-import type { AudioSettings } from '@dadei/ui/types/electron';
+import type { AudioSettings } from '@chello/ui/types/electron';
 
-export const AUDIO_SETTINGS_CHANGED = 'dadei:audio-settings-changed';
+export const AUDIO_SETTINGS_CHANGED = 'chello:audio-settings-changed';
 
-const WEB_STORAGE_KEY = 'dadei:audio-settings';
+const WEB_STORAGE_KEY = 'chello:audio-settings';
 
 export const DEFAULT_AUDIO_SETTINGS: AudioSettings = {
   inputDeviceId: null,

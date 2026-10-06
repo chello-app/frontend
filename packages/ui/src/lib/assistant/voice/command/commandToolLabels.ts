@@ -1,4 +1,4 @@
-import { formatForUser } from '@dadei/ui/lib/platform/shared/time';
+import { formatForUser } from '@chello/ui/lib/platform/shared/time';
 
 const MAX_QUERY_CHARS = 36;
 

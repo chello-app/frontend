@@ -1,13 +1,13 @@
 import { useCallback, useMemo, useRef } from 'react';
-import { useCommand } from '@dadei/ui/contexts/CommandContext';
-import { useService } from '@dadei/ui/contexts/ServiceContext';
-import { useAssistantRuntimeState } from '@dadei/ui/contexts/AssistantRuntimeContext';
-import { useTutorialEngaged } from '@dadei/ui/contexts/TutorialContext';
+import { useCommand } from '@chello/ui/contexts/CommandContext';
+import { useService } from '@chello/ui/contexts/ServiceContext';
+import { useAssistantRuntimeState } from '@chello/ui/contexts/AssistantRuntimeContext';
+import { useTutorialEngaged } from '@chello/ui/contexts/TutorialContext';
 import {
   markMicIntentHandled,
   shouldAcceptMicIntent,
-} from '@dadei/ui/lib/assistant/lifecycle/assistantLifecycle';
-import { deriveMicAppearanceFromRuntime } from '@dadei/ui/lib/assistant/voice/micAppearance';
+} from '@chello/ui/lib/assistant/lifecycle/assistantLifecycle';
+import { deriveMicAppearanceFromRuntime } from '@chello/ui/lib/assistant/voice/micAppearance';
 
 export function useMicIntent() {
   const runtime = useAssistantRuntimeState();
