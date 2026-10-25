@@ -1,6 +1,6 @@
 /**
  * On-device wake ASR (Whisper) is weak on rare names. We bias decoding with initial_prompt
- * and accept several plausible spellings / “dah dee” phonetic outputs, plus “Assistant”.
+ * and accept several plausible spellings / phonetic outputs, plus “Assistant”.
  */
 
 import {
@@ -76,20 +76,7 @@ const ASSISTANT_WAKE_FIRST_WORDS = new Set([
   'jarvis',
 ]);
 
-const CHELLO_WAKE_FIRST_WORDS = new Set([
-  'chello',
-  'dadey',
-  'dadee',
-  'daday',
-  'dah-dee',
-  'dahdee',
-  'da-dee',
-  'daddy',
-  'daddies',
-  'dadai',
-  'dadeh',
-  'jarvis',
-]);
+const CHELLO_WAKE_FIRST_WORDS = new Set(['chello', 'daddy', 'daddies', 'jarvis']);
 
 /**
  * True when the transcript is plausibly the user saying a wake word.
@@ -102,22 +89,12 @@ export function transcriptLikelyContainsWakeWord(text: string): boolean {
 
   if (/\bassistant\b/.test(lower)) return true;
 
-  const hasChelloShape =
-    /\bchello\b/.test(lower) ||
-    /\bdadey\b/.test(lower) ||
-    /\bdadee\b/.test(lower) ||
-    /\bdaday\b/.test(lower) ||
-    /\bdah[-\s]?dee\b/.test(lower) ||
-    /\bda[-\s]?dee\b/.test(lower) ||
-    /\bda\s+d[eiy]\b/.test(lower) ||
-    /\bda[-\s]?dei\b/.test(lower) ||
-    /\bdade\s*[-]?\s*i\b/.test(lower) ||
-    /\bjarvis\b/.test(lower);
+  const hasChelloShape = /\bchello\b/.test(lower) || /\bjarvis\b/.test(lower);
 
   if (hasChelloShape) return true;
 
   const collapsed = lower.replace(/[^a-z]/g, '');
-  if (/chello|dadey|dadee|daday|dahdee|dadai|dadeh|jarvis/.test(collapsed)) return true;
+  if (/chello|jarvis/.test(collapsed)) return true;
   if (/assistant/.test(collapsed)) return true;
 
   return false;
@@ -151,21 +128,11 @@ function startsWithAssistantWake(lead: string, firstWord: string, collapsedLead:
 function startsWithChelloWake(lead: string, collapsedLead: string, firstWord: string): boolean {
   if (CHELLO_WAKE_FIRST_WORDS.has(firstWord)) return true;
 
-  const startsShape =
-    /^chello\b/i.test(lead) ||
-    /^dadey\b/i.test(lead) ||
-    /^dadee\b/i.test(lead) ||
-    /^daday\b/i.test(lead) ||
-    /^dah[-\s]?dee\b/i.test(lead) ||
-    /^da[-\s]?dee\b/i.test(lead) ||
-    /^da\s+d[eiy]\b/i.test(lead) ||
-    /^da[-\s]?dei\b/i.test(lead) ||
-    /^dade\s*[-]?\s*i\b/i.test(lead) ||
-    /^daddy\b/i.test(lead);
+  const startsShape = /^chello\b/i.test(lead) || /^daddy\b/i.test(lead);
 
   if (startsShape) return true;
 
-  return /^(chello|dadey|dadee|daday|dahdee|dadai|dadeh|daddy|jarvis)/.test(collapsedLead);
+  return /^(chello|daddy|jarvis)/.test(collapsedLead);
 }
 
 /**
@@ -205,7 +172,6 @@ export function normalizeVisibleCommandText(text: string): string {
   if (!normalized) return '';
 
   let out = normalized;
-  out = out.replace(/^\s*da[- ]?dei\b[,.]?\s*/i, '');
   out = out.replace(/^\s*chello\b[,.]?\s*/i, '');
   out = out.replace(/^\s*daddy\b[,.]?\s*/i, '');
   out = out.replace(/^\s*jarvis\b[,.:]?\s*/i, '');

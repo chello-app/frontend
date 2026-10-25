@@ -10,8 +10,6 @@ const BLEED_PATTERNS: RegExp[] = [
   /^\s*transcribe\s+exactly\b[\s,.;:!?'"`]*/gi,
   /^\s*do\s+not\s+add\s+extra\s+words\b[\s,.;:!?'"`]*/gi,
   /^\s*wake\s+words?\s*:\s*chello\b[\s,.;:!?'"`]*/gi,
-  /^\s*spelled\s+d-a-d-e-i\b[\s,.;:!?'"`]*/gi,
-  /^\s*pronounced\s+dah-dee\b[\s,.;:!?'"`]*/gi,
   /^\s*assistant\s+means\s+the\s+voice\s+assistant\b[\s,.;:!?'"`]*/gi,
   /^\s*transcribe\b[,.:;]?\s*/i,
   /^\s*transcript\b[,.:;]?\s*/i,
