@@ -10,7 +10,7 @@ import {
 describe('stripLeadingWakeDisfluencies', () => {
   it('removes a chain of leading fillers', () => {
     expect(stripLeadingWakeDisfluencies('Um, uh, Chello')).toBe('Chello');
-    expect(stripLeadingWakeDisfluencies('  okay,   so, well  dahdee')).toBe('dahdee');
+    expect(stripLeadingWakeDisfluencies('  okay,   so, well  chello')).toBe('chello');
   });
 
   it('caps strips at MAX_DISFLUENCY_STRIPS', () => {
@@ -28,7 +28,6 @@ describe('transcriptStartsWithWakeCommand', () => {
   it('accepts Chello variants at start', () => {
     expect(transcriptStartsWithWakeCommand('Chello')).toBe(true);
     expect(transcriptStartsWithWakeCommand('chello, what time')).toBe(true);
-    expect(transcriptStartsWithWakeCommand('Dah-dee please')).toBe(true);
   });
 
   it('accepts Assistant at start', () => {

@@ -36,15 +36,12 @@ import { ENROLLMENT_TRANSCRIPT_OPENER } from '@chello/ui/types/command.types';
 const ASSISTANT_HINT_ROW =
   'flex flex-wrap items-center justify-center gap-2 text-sm text-zinc-500 font-secondary';
 
-const WAKE_PHONETIC = 'dah-dee';
-
 function WakeWordHint() {
   return (
     <div className="text-center font-secondary">
       <p className="text-sm text-zinc-500">
         Say <span className="text-emerald-400/90">hey chello</span>
       </p>
-      <p className="mt-1 text-[0.6875rem] tracking-wide text-zinc-600">{WAKE_PHONETIC}</p>
     </div>
   );
 }
