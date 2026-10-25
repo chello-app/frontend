@@ -1,6 +1,6 @@
 {
   "electronVersion": "39.8.8",
-  "appId": "com.dadei.app",
+  "appId": "com.chello.app",
   "productName": "chello",
   "copyright": "Copyright © 2026 Ankur Desai",
   "artifactName": "chello-${version}-${os}-${arch}.${ext}",
